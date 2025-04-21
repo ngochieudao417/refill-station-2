@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Website</title>
+    <link href="../css/product.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="product-detail" id="product-detail">Đang tải sản phẩm...</div>
+
+    <script>
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function getStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                stars += i <= rating ? '★' : '☆';
+            }
+            return stars;
+        }
+
+        async function loadProduct() {
+            const params = new URLSearchParams(location.search);
+            const id = params.get("id");
+
+            const res = await fetch("../json/products.json");
+            const data = await res.json();
+            const product = data.find(p => p.id == id);
+
+            const box = document.getElementById("product-detail");
+
+            if (!product) {
+                box.innerHTML = "Không tìm thấy sản phẩm.";
+                return;
+            }
+
+            const purchaseCount = getRandomInt(100, 1000);
+            const rating = getRandomInt(1, 5);
+
+            box.innerHTML = `
+      <div class="product-top">
+        <div class="product-img">
+          <img src="${product.img}" alt="${product.name}">
+        </div>
+        <div class="product-info">
+          <div class="product-name">${product.name}</div>
+          <div class="product-price">${product.price}.000đ</div>
+          <div class="product-meta">
+            Đã bán: ${purchaseCount} | Đánh giá:
+            <span class="stars">${getStars(rating)}</span>
+          </div>
+          <div class="product-buy"></div>
+        </div>
+      </div>
+      <div class="product-desc">${product.desc}</div>
+    `;
+        }
+
+        loadProduct();
+    </script>
+</body>
+
+</html>

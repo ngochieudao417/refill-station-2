@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop Website</title>
+  <link href="../css/products.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/main.css" rel="stylesheet">
+  <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/image/icon/themify-icons/themify-icons.css">
+</head>
+
+<body>
+  
+  <div class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="../vid/product-video/background.mp4" type="video/mp4">
+      Trình duyệt không hỗ trợ video.
+    </video>
+    <img src="../image/product-image/torn_edge_transparent.png"
+      style="position: absolute; bottom: -10px; left: 0; z-index: 2; width: 100%; height: auto;">
+  </div>
+    <div class="decor-container">
+      <div class="decor-card">
+        <img src="../image/product-image/icon-dua-128.png" alt="">
+        <h5>Lên Men Từ Dứa</h5>
+      </div>
+      <div class="decor-card">
+        <img src="../image/product-image/icon-tinh-dau-128.png" alt="">
+        <h5>Tinh Dầu Tự Nhiên</h5>
+      </div>
+      <div class="decor-card">
+        <img src="../image/product-image/icon-bao-ve-128.png" alt="">
+        <h5>An Toàn Sức Khoẻ</h5>
+      </div>
+      <div class="decor-card" style="width:200px">
+        <img src="../image/product-image/icon-trai-dat-128.png" alt="">
+        <h5>Thân Thiện Môi Trường</h5>
+      </div>
+      <div class="decor-card">
+        <img src="../image/product-image/icon-tin-cay-128.png" alt="">
+        <h5>Tin Cậy</h5>
+      </div>
+      <div class="decor-card">
+        <img src="../image/product-image/refill.png" alt="">
+        <h5>Trạm Đong Đầy</h5>
+      </div>
+    </div>
+    <div style="max-width: 1000px; margin: 0 auto; padding-left: 20px;">
+
+    <br><h1 style="display: inline-block; background-color: #256138; color: #256138;">0</h1>
+    <h1 style="display: inline-block;">Cửa hàng</h1>
+    <div id="product-list">Đang tải...</div>
+
+    <script>
+      async function loadProducts() {
+        const res = await fetch('../json/products.json');
+        const data = await res.json();
+
+        const categories = {};
+        data.forEach(p => {
+          if (!categories[p.categoryId]) {
+            categories[p.categoryId] = [];
+          }
+          categories[p.categoryId].push(p);
+        });
+
+        const productList = Object.entries(categories).map(([catId, products]) => `
+      <div class="category">
+        <h2>${catId}</h2>
+        <div class="product-grid">
+          ${products.map(p => `
+            <div class="product" onclick="location.href='product.html?id=${p.id}'">
+              <img src="${p.img}" alt="${p.name}">
+              <h3>${p.name}</h3>
+              <p>${p.price}.000đ</p>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `).join('');
+
+        document.getElementById("product-list").innerHTML = productList;
+      }
+
+      loadProducts();
+    </script>
+
+  </div>
+
+</body>
+
+</html>
