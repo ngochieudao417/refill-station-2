@@ -131,3 +131,13 @@ body {
   
 }
 
+/* css lai cho header va icon */
+.header__search-icon {
+  font-size: 15px;
+  color: var(--black-color) !important;
+}
+
+.header__top {
+  top: 0;
+  left: 0;
+}

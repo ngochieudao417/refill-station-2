@@ -1,6 +1,6 @@
 .product-detail {
     max-width: 800px;
-    margin: 40px auto;
+    margin: 8rem auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -81,3 +81,9 @@
         min-width: 100px;
     }
   }
+
+
+  /* chinh lai header */
+.header__top {
+    top: 0;
+}
