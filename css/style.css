@@ -1,0 +1,27 @@
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-family: 'Quicksand', sans-serif !important;
+  font-size: 1.9rem; 
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+}
+
+/* 3. CSS Variables: màu chủ đạo (eco-friendly vibes) */
+:root {
+  --highlight-text: #1b2a57;
+  --gray-color: #f3f3f3;
+  --white-color: #fff;
+  --black-color: #000;
+  --primary-color: #37c363; /*màu chủ đạo, dùng cho nav bar, nút chính, title */
+  --secondary-color: #8fd9c4; /*dùng cho hover, section */
+  --accent-color: #b8d9d0; /* dùng cho card, khung thông tin  */
+  --text-color: #333333;
+  --secondary-text-color: #a8c66c; 
+  --brd-color: #b8d9d0; /* dùng cho border */
+  --bg-color: #e8f1fd; /*dùng cho background */
+  --bg-text-color: #f3f3f3;
+}

@@ -1,0 +1,212 @@
+.introduce{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+}
+.introduce h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+/* .history__title {
+    margin-bottom: 4rem;
+    font-size: 3.2rem;
+} */
+.history__content > h4 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1.2rem;
+}
+.history__content p,
+.history__content ul {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+.history__content ul {
+    padding-left: 2rem;
+    list-style-type: disc;
+}
+.history__content > div {
+    margin-bottom: 4rem;
+}
+.history__content img {
+    width: 40%;
+    max-width: 50rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
+    margin-top: 0;
+}
+.history__content--1 > div,
+.history__content--2 > div,
+.history__content--3,
+.history__content--4,
+.history__content--5,
+.history__content--6,
+.history__content--7 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+}
+.history__content--1 > div > div,
+.history__content--3 > div,
+.history__content--4 > div,
+.history__content--5 > div,
+.history__content--6 > div,
+.history__content--7 > div {
+    flex: 1;
+}
+.member__content--1,
+.member_content--2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+.member__content--1 img {
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+.member_content--2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+.member_content--2 div {
+    width: 16rem;
+    flex-wrap: nowrap;
+}
+.member_content--2 img {
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
+    border-radius: 0%;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+.icon {
+    padding: 4rem 2rem;
+    border-radius: 1.6rem;
+    margin: 6rem 0;
+}
+/* .icon h3 {
+    font-size: 2.6rem;
+    color: #2e6c4d;
+    margin-bottom: 2rem;
+    text-align: center;
+} */
+.icon > div:first-of-type {
+    margin-bottom: 1rem;
+    text-align: start;
+}
+.icon ul {
+    text-align: left;
+    display: inline-block;
+    margin-top: 1rem;
+    list-style: disc inside;
+}
+/* #note>div{
+    display: flex;
+    flex-direction: row;
+} */
+.icon > div:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.icon > div:nth-of-type(2) > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+.icon img {
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.08);
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+}
+
+.icon > div:nth-of-type(2) > div > div {
+    text-align: start;
+    max-width: 16rem;
+}
+.vision {
+    background-color: var(--bg-color);
+    padding: 2rem 1rem;
+    border-radius: 1.6rem;
+    box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* .vision h3 {
+    font-size: rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+} */
+
+.content {
+    display: grid;
+    grid-template-areas:
+        "title title"
+        "pic1 nd"
+        "pic1 nd"
+        "pic2 pic2";
+    grid-template-columns: 2fr 3fr;
+    text-align: start;
+    padding-bottom: 1rem;
+    gap: 2rem;
+    align-items: center;
+}
+
+#pic1 {
+    grid-area: pic1;
+    width: 100%;
+    max-width: 70rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: block;
+}
+
+#nd {
+    grid-area: nd;
+    max-width: 70rem;
+}
+
+#nd p,
+#nd ul {
+    margin-bottom: 1rem;
+}
+
+#nd ul {
+    list-style: disc inside;
+}
+
+#pic2 {
+    grid-area: pic2;
+    width: 100%;
+    max-width: 70rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: block;
+}

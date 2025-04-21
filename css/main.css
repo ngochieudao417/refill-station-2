@@ -1,0 +1,472 @@
+/* ===============================
+   MUTUAL CSS
+================================= 
+bao gồm header, footer - tất cả các trang đều dùng chung
+*/
+/* header */
+
+/* top header: search, logo, login/signin, cart */
+.header__top {
+  position: fixed;
+  background-color: var(--white-color);
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  height: inherit;
+  justify-content: space-around;
+  grid-area: header;
+  align-items: center;
+}
+
+.header__search {
+  border: 0.1rem solid var(--black-color);
+  border-radius: 3rem;
+  padding: 0.5rem 1.5rem;
+ 
+}
+
+.header__search-box, 
+.header__search-box:focus {
+
+  outline: none;
+  border: none;
+  width: 12rem;
+  font-size: 15px;
+  height: 2rem;
+}
+
+.header__brand-logo {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.header__navigation {
+  height: 100%;
+
+}
+
+.header__nav-list {
+  height: inherit;
+  align-items: center;
+  display: flex;
+}
+
+.header__nav-item {
+  padding: 0 1.5rem;
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  line-height: 5rem;
+  transition: background-color 0.3s ease;
+}
+
+.header__nav-item:hover {
+  background-color: var(--primary-color);
+}
+
+.header__nav-item:hover > .header__subnav {
+  display: block;
+}
+
+.header__nav-link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text-color);
+  height: 100%;
+  width: 100%;
+  
+}
+
+.header__subnav {
+  border-radius: 0.5rem;
+  background-color: var(--white-color);
+  display: none;
+  position: absolute;
+  width: 175%;
+  left: 0;
+  top: 100%;
+}
+
+.header__subnav-link {
+  opacity: 0.6;
+  display: inline-block;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--black-color);
+  width: 100%;
+  padding-left: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.header__subnav-link:hover {
+  opacity: 1;
+  background-color: var(--primary-color);
+}
+
+.header__action-button {
+  text-decoration: none;
+  color: var(--black-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.header__action-button:nth-child(2) {
+  border-left: 0.1rem solid var(--gray-color);
+}
+/* end header */
+
+/* footer */
+.footer {
+  margin-top: 2rem;
+  grid-area: footer;
+  text-align: center;
+  height: 8rem;
+  line-height: 8rem;
+  background-color: var(--primary-color);
+}
+/* end footer */
+
+/* another css */
+  .center-title {
+    color: var(--highlight-text);
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: bolder;
+    padding: 1.8rem 0 1rem 0;
+  }
+
+  b {
+    font-weight: bold !important;
+  }
+/* end another css */
+
+
+
+/* ===============================
+   HOMEPAGE PAGE SECTION
+================================= */
+
+#homepage {
+  display: grid;
+  grid-template:
+    "header header header header"
+    "about about about about"
+    "content content content content"
+    "footer footer footer footer"
+    / 1fr 2fr 2fr 1fr;
+}
+
+/* aboout */
+ .about {
+  width: 100%;
+  max-height: 40rem;
+  overflow: hidden;
+  margin-top: 5rem;
+  grid-area: about;
+  position: relative;
+}
+
+/* slider */
+
+.about__slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 400%; /* vì có 4 ảnh */
+  height: 100%;
+}
+
+.about__slide-img {
+  width: 25%;
+  height: 100%; 
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* end about */
+
+/* content */
+.content {
+  grid-area: content;
+  padding-top: 4rem;
+  background-color: var(--white-color);
+}
+
+/* intro neu green club */
+.content__about-ngc {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  font-style: italic;
+  opacity: 0.9;
+  padding: 4rem;
+}
+
+/* intro fuwa */
+.content__fuwa {
+  padding-top: 4rem;
+  background-color: var(--gray-color);
+}
+
+.content__fuwa-bio {
+  display: flex;
+  padding: 4rem;
+}
+
+.content__bio-img {
+  width: 45%;
+}
+
+.content__bio-info {
+  height: 50%;
+  font-size: 1.2rem;
+  transform: translateY(50%);
+  line-height: 1.6;
+  padding-right: 1rem;
+}
+
+.content__fuwa3e {
+  background-color: var(--white-color);
+  padding: 2rem;
+  display: flex;
+}
+
+.content__fuwa3e-img {
+  max-width: 100%;
+  height: 30%;
+}
+
+.content__fuwa3e-explain {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+/* end content */
+
+
+/* END HOMEPAGE */
+
+/* ===============================
+   RECRUITMENT PAGE STYLES
+================================= */
+
+#recruitmentpage {
+  display: grid;
+  grid-template:
+    "header header header header"
+    "about about about about"
+    ". content content ."
+    "footer footer footer footer"
+    / 1fr 2fr 2fr 1fr;
+}
+
+#recruitmentpage .about {
+  grid-area: about;
+  
+  position: relative;
+}
+
+/* Banner */
+.recruitment__banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.recruitment__banner--img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Header section */
+.recruitment__header {
+  background-color: var(--bg-color);
+  padding: 6rem 2rem 10rem;
+  text-align: center;
+}
+
+.recruitment__header-wrapper {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+/* Title */
+.recruitment__title {
+  position: relative;
+  font-size: 3.6rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  z-index: 1;
+  display: inline-block;
+}
+
+.highlight {
+  position: absolute;
+  top: 60%;
+  left: 0%;
+  width: 100%;
+  height: 60%;
+  background-color: var(--accent-color);
+  z-index: -1;
+  display: block;
+  opacity: 0.4;
+}
+
+.secondary-text-color {
+  color: var(--secondary-text-color);
+}
+
+/* Info text */
+.recruitment__duration,
+.recruitment__target {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+/* Button */
+.recruitment__button {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 3rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  transition: scale 0.3s;
+}
+
+.recruitment__button:hover {
+  background-color: var(--secondary-color);
+  scale: 1.05;
+}
+
+/* Section container */
+.recruitment__section {
+  width: 100%;
+  margin-bottom: 10rem;
+}
+
+.recruitment__heading {
+  font-size: 2.2rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.bullet {
+  position: absolute;
+  left: -2%;
+  top: 2%;
+  background-color: var(--primary-color);
+  width: 0.4rem;
+  height: 2rem;
+  border-radius: 1rem;
+}
+
+/* call */
+
+.recruitment__list {
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: #f3f3f3;
+  border-left: 6px solid var(--accent-color);
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.recruitment__list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.recruitment__item {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  padding-left: 1.6rem;
+  position: relative;
+  color: #333;
+}
+
+/* method */
+.method__list {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.method__item {
+  background-color: #f3f3f3;
+  border-left: 6px solid var(--accent-color);
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.method__title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: #333;
+}
+
+.method__title span {
+  color: var(--secondary-text-color);
+}
+
+.method__date {
+  font-size: 1.4rem;  
+}
+
+/* Footer */
+.recruitment__footer {
+  background-color: var(--primary-color);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.recruitment__footer .recruitment__text {
+  color: var(--text-color);
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
+}
+
+/* ===============================
+     RESPONSIVE
+  ================================= */
+
+@media (max-width: 768px) {
+  .recruitment__title {
+    font-size: 2.8rem;
+  }
+
+  .recruitment__heading {
+    font-size: 2rem;
+  }
+
+  .recruitment__button {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .recruitment__main {
+    padding: 3rem 1.2rem;
+  }
+
+  .recruitment__section {
+    padding: 1.6rem;
+  }
+
+  .recruitment__list-item {
+    font-size: 1.4rem;
+  }
+}
