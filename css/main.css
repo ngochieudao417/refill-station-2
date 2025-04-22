@@ -22,12 +22,10 @@ bao gồm header, footer - tất cả các trang đều dùng chung
   border: 0.1rem solid var(--black-color);
   border-radius: 3rem;
   padding: 0.5rem 1.5rem;
- 
 }
 
-.header__search-box, 
+.header__search-box,
 .header__search-box:focus {
-
   outline: none;
   border: none;
   width: 12rem;
@@ -42,7 +40,6 @@ bao gồm header, footer - tất cả các trang đều dùng chung
 
 .header__navigation {
   height: 100%;
-
 }
 
 .header__nav-list {
@@ -74,7 +71,6 @@ bao gồm header, footer - tất cả các trang đều dùng chung
   color: var(--text-color);
   height: 100%;
   width: 100%;
-  
 }
 
 .header__subnav {
@@ -129,21 +125,18 @@ bao gồm header, footer - tất cả các trang đều dùng chung
 /* end footer */
 
 /* another css */
-  .center-title {
-    color: var(--highlight-text);
-    text-align: center;
-    font-size: 2.2rem;
-    font-weight: bolder;
-    padding: 1.8rem 0 1rem 0;
-    text-decoration: none;
-  }
+.center-title {
+  color: var(--highlight-text);
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bolder;
+  padding: 1.8rem 0 1rem 0;
+}
 
-  b {
-    font-weight: bold !important;
-  }
+b {
+  font-weight: bold !important;
+}
 /* end another css */
-
-
 
 /* ===============================
    HOMEPAGE PAGE SECTION
@@ -160,7 +153,7 @@ bao gồm header, footer - tất cả các trang đều dùng chung
 }
 
 /* aboout */
- .about {
+.about {
   width: 100%;
   max-height: 40rem;
   overflow: hidden;
@@ -180,7 +173,7 @@ bao gồm header, footer - tất cả các trang đều dùng chung
 
 .about__slide-img {
   width: 25%;
-  height: 100%; 
+  height: 100%;
   flex-shrink: 0;
   object-fit: contain;
 }
@@ -287,7 +280,6 @@ bao gồm header, footer - tất cả các trang đều dùng chung
 .content__brand-list {
   display: flex;
   justify-content: space-between;
-
 }
 
 .content__brand-item {
@@ -347,6 +339,5 @@ bao gồm header, footer - tất cả các trang đều dùng chung
   width: 6rem;
 }
 /* end content */
-
 
 /* END HOMEPAGE */
