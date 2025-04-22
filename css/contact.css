@@ -1,4 +1,9 @@
+.header__top {
+    left: 0;
+    top: 0;
+}
 .contact {
+    margin-top: 8rem;
     max-width: 1100px;
     margin: 0 auto;
     padding: 3rem 1.5rem;
@@ -21,6 +26,7 @@
 }
 /* Hàng chia trái - phải*/
 .contact__row {
+    margin-top: 8rem;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;

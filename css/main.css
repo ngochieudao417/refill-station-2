@@ -85,6 +85,7 @@ bao gồm header, footer - tất cả các trang đều dùng chung
   width: 175%;
   left: 0;
   top: 100%;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 .header__subnav-link {
@@ -134,6 +135,7 @@ bao gồm header, footer - tất cả các trang đều dùng chung
     font-size: 2.2rem;
     font-weight: bolder;
     padding: 1.8rem 0 1rem 0;
+    text-decoration: none;
   }
 
   b {
@@ -199,6 +201,13 @@ bao gồm header, footer - tất cả các trang đều dùng chung
   font-style: italic;
   opacity: 0.9;
   padding: 4rem;
+}
+
+.content__ngc-image {
+  padding: 3rem 4rem 0 4rem;
+  height: 35rem;
+  border-radius: 5rem;
+  width: 84rem;
 }
 
 /* intro fuwa */
@@ -275,446 +284,69 @@ bao gồm header, footer - tất cả các trang đều dùng chung
   text-align: center;
 }
 
+.content__brand-list {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.content__brand-item {
+  width: 30%;
+  padding: 3rem 0;
+}
+
+.content__brand-img {
+  transition: transform 0.5s ease;
+}
+
+.content__brand-img:hover {
+  transform: scale(1.05);
+}
+
+.content__brand-img {
+  width: 100%;
+}
+
+.content__brand-title {
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.content__brand-info {
+  font-size: 1.3rem;
+  line-height: 2.6rem;
+}
+
+.content__brand-for {
+  font-size: 1.5rem;
+}
+
+.content__start-business {
+  margin: 1rem 5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  box-shadow: 0 0 1.1rem 0.1rem rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  height: 10rem;
+}
+
+.content__business-form {
+  margin-top: 1rem;
+}
+.input-box {
+  width: 15rem;
+  height: 2.5rem;
+}
+
+.content__form-submit {
+  color: var(--white-color);
+  height: 2.5rem;
+  background-color: var(--black-color);
+  font-weight: 700;
+  width: 6rem;
+}
 /* end content */
 
 
 /* END HOMEPAGE */
-
-/* ===============================
-   RECRUITMENT PAGE STYLES
-================================= */
-
-#recruitmentpage {
-  display: grid;
-  grid-template:
-    "header header header header"
-    "about about about about"
-    ". content content ."
-    "footer footer footer footer"
-    / 1fr 2fr 2fr 1fr;
-}
-
-#recruitmentpage .about {
-  grid-area: about;
-  
-  position: relative;
-}
-
-/* Banner */
-.recruitment__banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.recruitment__banner--img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Header section */
-.recruitment__header {
-  background-color: var(--bg-color);
-  padding: 6rem 2rem 10rem;
-  text-align: center;
-}
-
-.recruitment__header-wrapper {
-  max-width: 70rem;
-  margin: 0 auto;
-}
-
-/* Title */
-.recruitment__title {
-  position: relative;
-  font-size: 3.6rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  margin-bottom: 2rem;
-  z-index: 1;
-  display: inline-block;
-}
-
-.highlight {
-  position: absolute;
-  top: 60%;
-  left: 0%;
-  width: 100%;
-  height: 60%;
-  background-color: var(--accent-color);
-  z-index: -1;
-  display: block;
-  opacity: 0.4;
-}
-
-.secondary-text-color {
-  color: var(--secondary-text-color);
-}
-
-/* Info text */
-.recruitment__duration,
-.recruitment__target {
-  font-size: 1.8rem;
-  color: var(--text-color);
-  margin-bottom: 1rem;
-}
-
-/* Button */
-.recruitment__button {
-  display: inline-block;
-  margin-top: 2rem;
-  font-size: 1.8rem;
-  padding: 1rem 2rem;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  border: none;
-  border-radius: 3rem;
-  text-decoration: none;
-  transition: background-color 0.3s;
-  transition: scale 0.3s;
-}
-
-.recruitment__button:hover {
-  background-color: var(--secondary-color);
-  scale: 1.05;
-}
-
-/* Section container */
-.recruitment__section {
-  width: 100%;
-  margin-bottom: 10rem;
-}
-
-.recruitment__heading {
-  font-size: 2.2rem;
-  color: var(--text-color);
-  margin-bottom: 2rem;
-  position: relative;
-}
-
-.bullet {
-  position: absolute;
-  left: -2%;
-  top: 2%;
-  background-color: var(--primary-color);
-  width: 0.4rem;
-  height: 2rem;
-  border-radius: 1rem;
-}
-
-/* call */
-
-.recruitment__list {
-  margin-top: 4rem;
-  padding: 2rem;
-  background-color: #f3f3f3;
-  border-left: 6px solid var(--accent-color);
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.recruitment__list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.recruitment__item {
-  font-size: 1.6rem;
-  line-height: 1.6;
-  margin-bottom: 1.2rem;
-  padding-left: 1.6rem;
-  position: relative;
-  color: #333;
-}
-
-/* method */
-.method__list {
-  list-style: none;
-  padding: 0;
-  margin-top: 2rem;
-}
-
-.method__item {
-  background-color: #f3f3f3;
-  border-left: 6px solid var(--accent-color);
-  padding: 1.5rem 2rem;
-  margin-bottom: 1.5rem;
-  border-radius: 0.8rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.method__title {
-  font-size: 1.7rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem;
-  color: #333;
-}
-
-.method__title span {
-  color: var(--secondary-text-color);
-}
-
-.method__date {
-  font-size: 1.4rem;  
-}
-
-/* Footer */
-.recruitment__footer {
-  background-color: var(--primary-color);
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.recruitment__footer .recruitment__text {
-  color: var(--text-color);
-  font-size: 1.4rem;
-  margin: 0.5rem 0;
-}
-
-/* ===============================
-     RESPONSIVE
-  ================================= */
-
-@media (max-width: 768px) {
-  .recruitment__title {
-    font-size: 2.8rem;
-  }
-
-  .recruitment__heading {
-    font-size: 2rem;
-  }
-
-  .recruitment__button {
-    font-size: 1.6rem;
-    padding: 0.8rem 1.6rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .recruitment__main {
-    padding: 3rem 1.2rem;
-  }
-
-  .recruitment__section {
-    padding: 1.6rem;
-  }
-
-  .recruitment__list-item {
-    font-size: 1.4rem;
-  }
-}
-
-/* ===============================
-     Login Page
-  ================================= */
-  .header__log-link {
-    text-decoration: none;
-    color: var(--text-color);
-  }
-  
-  .auth__container {
-    padding-top: 16rem;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    height: 60rem;
-  }
-  
-  .auth {
-    position: relative;
-    width: 80%;
-    height: 30rem;
-    overflow: hidden;
-    background: #f0f0f0;
-    background-color: var(--bg-text-color);
-    border: 6px solid var(--accent-color);
-    border-radius: 2.2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  }
-  
-  .auth__wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    transition: transform 0.8s ease-in-out;
-  }
-  
-  .auth__form {
-    width: 50%;
-    padding: 3.6rem;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    transition: opacity 0.5s ease;
-  }
-  
-  .auth__form--login {
-    background-image: url("login-bg.jpg");
-  }
-  
-  .auth__form--register {
-    background-image: url("register-bg.jpg");
-  }
-  
-  .auth__title {
-    color: var(--secondary-text-color);
-    margin-bottom: 20px;
-    font-size: 2.4rem;
-    text-align: center;
-  }
-  
-  .auth__input {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: none;
-  }
-  
-  .auth__button {
-    background: var(--primary-color);
-    border-radius: 50px;
-    padding: 0.6rem 1rem;
-    width: 60%;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    z-index: 3;
-    text-wrap: nowrap;
-  }
-  
-  .auth__button--login {
-    margin-top: 6rem;
-  }
-  
-  .auth__button--register {
-    margin-top: 2.4rem;
-  }
-  
-  .auth__button:hover {
-    background: var(--secondary-color);
-    scale: 1.1;
-    transition: scale 0.8s ease;
-  }
-  
-  .auth__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background-image: url("../image/homepage/homepage_background1.jpeg"); /* ảnh ngang bạn thêm vào */
-    background-size: 200% 100%; /* cho phép cuộn ngang ảnh */
-    background-position: left center;
-    background-repeat: no-repeat;
-    z-index: 2;
-    transition: transform 0.8s ease-in-out, background-position 0.8s ease-in-out,
-      border-radius 1.2s ease-in-out;
-    border-radius: 2rem 0 0 2rem; /* bo góc trái nếu muốn */
-    pointer-events: none;
-  }
-  
-  .auth--active .auth__overlay {
-    transform: translateX(100%);
-    background-position: right center;
-    border-radius: 0 2rem 2rem 0; /* bo góc phải nếu muốn */
-  }
-  
-  .auth__arrow {
-    font-size: 18px;
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
-  
-  .auth__button--login:hover .auth__arrow {
-    opacity: 1;
-    transform: translateX(5px);
-  }
-  
-  .auth__button--register:hover .auth__arrow {
-    opacity: 1;
-    transform: translateX(-5px);
-  }
-  
-  /* Dưới 1024px - Tablet */
-  @media (max-width: 1024px) {
-    .auth {
-      height: 26rem;
-    }
-  
-    .auth__title {
-      font-size: 2rem;
-    }
-  
-    .auth__button {
-      font-size: 1.1rem;
-      padding: 0.5rem 1rem;
-    }
-  
-    .auth__button--login {
-      margin-top: 4.8rem;
-    }
-  
-    .auth__button--register {
-      margin-top: 2.2rem;
-    }
-  }
-  
-  /* Dưới 768px - Mobile */
-  @media (max-width: 768px) {
-    .auth {
-      height: 20rem;
-    }
-  
-    .auth__title {
-      font-size: 1.6rem;
-    }
-  
-    .auth__button {
-      font-size: 1rem;
-      padding: 0.4rem 0.8rem;
-    }
-  
-    .auth__form {
-      margin-top: 0rem;
-      padding: 1.2rem;
-    }
-  }
-  
-  /* Dưới 480px - Điện thoại nhỏ */
-  @media (max-width: 480px) {
-    .auth {
-      height: 16rem;
-    }
-  
-    .auth__title {
-      font-size: 1.4rem;
-    }
-  
-    .auth__button {
-      font-size: 0.9rem;
-      padding: 0.3rem 0.6rem;
-    }
-  
-    .auth__input {
-      width: 90%;
-      padding: 8px;
-    }
-  
-    .auth__form {
-      margin-top: 0rem;
-      padding: 0.6rem;
-    }
-  }
