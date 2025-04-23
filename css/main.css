@@ -118,10 +118,73 @@ bao gồm header, footer - tất cả các trang đều dùng chung
   margin-top: 2rem;
   grid-area: footer;
   text-align: center;
-  height: 8rem;
+  height: 35rem;
   line-height: 8rem;
-  background-color: var(--primary-color);
+  background-color: var(--gray-color);
+  padding: 40px 20px;
+  font-size: 14px;
+  line-height: 1.6;
 }
+
+.footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer__column {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer__title {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__item {
+  margin-bottom: 5px;
+}
+
+.footer__logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer__logo {
+  width: 80px;
+  height: auto;
+}
+
+.footer__social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.footer__icon {
+  font-size: 20px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+.footer__icon:hover {
+  color: var(--primary-color);
+}
+
 /* end footer */
 
 /* another css */
@@ -137,6 +200,8 @@ b {
   font-weight: bold !important;
 }
 /* end another css */
+
+
 
 /* ===============================
    HOMEPAGE PAGE SECTION
@@ -196,6 +261,10 @@ b {
   padding: 4rem;
 }
 
+.content__ngc-pic {
+  display: flex;
+  justify-content: center;
+}
 .content__ngc-image {
   padding: 3rem 4rem 0 4rem;
   height: 35rem;
@@ -340,4 +409,6 @@ b {
 }
 /* end content */
 
+
 /* END HOMEPAGE */
+

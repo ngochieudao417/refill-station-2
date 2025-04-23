@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/info.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
       rel="stylesheet"
@@ -85,13 +86,38 @@
         </div>
       </div>
       <div class="content">
-        <p class="content__title">
-          
-        </p>
-        <p class="content__description">
-          
-        </p>
-      </div>
+        <div class="content__menu">
+            <div class="content__menu-title">
+                <h3>Information Menu</h3>
+            </div>
+            <div class="content__menu-selection">
+                <div class="content__menu-navbar">
+                    <button class="content__menu-button content__menu-button--about">About</button>
+                    <button class="content__menu-button content__menu-button--services">Services</button>
+                    <button class="content__menu-button content__menu-button--contact">Contact</button>
+                </div>
+    
+                <!-- Content for About -->
+                <div class="content__menu-description content__menu-description--about">
+                    <h4 class="content__menu-heading">About Us</h4>
+                    <p class="content__menu-text">Here is the about information. You can add your details here.</p>
+                </div>
+    
+                <!-- Content for Services -->
+                <div class="content__menu-description content__menu-description--services">
+                    <h4 class="content__menu-heading">Our Services</h4>
+                    <p class="content__menu-text">Here is the list of services we offer. You can add your services here.</p>
+                </div>
+    
+                <!-- Content for Contact -->
+                <div class="content__menu-description content__menu-description--contact">
+                    <h4 class="content__menu-heading">Contact Us</h4>
+                    <p class="content__menu-text">Here is the contact information. You can add your contact details here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
       <div class="footer">
         <h2 class="slogan">
           Refill không chỉ là hành động, mà là phong cách sống!
@@ -100,3 +126,40 @@
     </div>
   </body>
 </html>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const aboutButton = document.querySelector('.content__menu-button--about');
+      const servicesButton = document.querySelector('.content__menu-button--services');
+      const contactButton = document.querySelector('.content__menu-button--contact');
+
+      const aboutDescription = document.querySelector('.content__menu-description--about');
+      const servicesDescription = document.querySelector('.content__menu-description--services');
+      const contactDescription = document.querySelector('.content__menu-description--contact');
+
+      // Show About description by default
+      aboutDescription.style.display = 'block';
+      servicesDescription.style.display = 'none';
+      contactDescription.style.display = 'none';
+
+      // Handle About button click
+      aboutButton.addEventListener('click', function() {
+          aboutDescription.style.display = 'block';
+          servicesDescription.style.display = 'none';
+          contactDescription.style.display = 'none';
+      });
+
+      // Handle Services button click
+      servicesButton.addEventListener('click', function() {
+          aboutDescription.style.display = 'none';
+          servicesDescription.style.display = 'block';
+          contactDescription.style.display = 'none';
+      });
+
+      // Handle Contact button click
+      contactButton.addEventListener('click', function() {
+          aboutDescription.style.display = 'none';
+          servicesDescription.style.display = 'none';
+          contactDescription.style.display = 'block';
+      });
+  });
+</script>

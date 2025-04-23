@@ -1,0 +1,68 @@
+
+
+.content {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content__menu-title h3 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.content__menu-navbar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.content__menu-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1em;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.content__menu-button:hover {
+    background-color: #2980b9;
+}
+
+/* Content section styles */
+.content__menu-description {
+    display: none;
+}
+
+.content__menu-heading {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.content__menu-text {
+    color: #555;
+}
+
+/* When About section is activated */
+.content__menu-description--about {
+    display: block;
+}
+
+/* When Services section is activated */
+.content__menu-description--services {
+    display: none;
+}
+
+/* When Contact section is activated */
+.content__menu-description--contact {
+    display: none;
+}
