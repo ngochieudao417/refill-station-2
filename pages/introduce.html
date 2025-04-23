@@ -6,89 +6,484 @@
     <link rel="stylesheet" href="./../css/main.css" />
     <link rel="stylesheet" href="./../css/style.css" />
     <link rel="stylesheet" href="./../css/reset.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./image/icon/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="../css/introduce.css">
-    <link rel="shortcut icon" href="/image/logo/gnc_logo.svg" type="image/x-icon">
-    <title>Refill Station</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <title>Giới thiệu</title>
+  
+    <style>
+        #introducepage {
+            display: grid;
+            grid-template:
+                "header header header header"
+                ". history history ."
+                ". member member ."
+                ". icon icon ."
+                ". channel channel ."
+                ". vision vision ."
+                ". content content ."
+                "footer footer footer footer";
+            grid-template-columns: 1fr 3fr 3fr 1fr;
+            gap: 1.5rem;
+            padding: 2rem 0;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .header { grid-area: header; }
+        .history { grid-area: history; }
+        .member { grid-area: member; }
+        .icon { grid-area: icon; }
+        .channel { grid-area: channel; }
+        .vision { grid-area: vision; }
+        .content { grid-area: content; }
+        .footer { grid-area: footer; }
+
+        #introducepage h3{
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        #introducepage h4{
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        #introducepage ul{
+            list-style: disc;
+            list-style-position: inside;
+        }
+      
+        .history__content--1 > div{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0rem;
+            
+        }
+        #introducepage ul {
+            list-style-position: inside;
+        }
+
+        .history__content--1 > div > div {
+            flex: 1;
+        }
+
+        .history__content--2 > div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0rem;
+            justify-content: center;
+        }
+
+        .history__content--3,
+        .history__content--4,
+        .history__content--5,
+        .history__content--6,
+        .history__content--7 {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            align-items: flex-start;
+        }
+
+        .history__content--4 div,
+        .history__content--3 div,
+        .history__content--5 div,
+        .history__content--6 div,
+        .history__content--7 div {
+            width: 50%;
+        }
+
+        .history__content img {
+            width: 100%;
+            max-width: 25rem;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .history__content img:hover {
+            transform: scale(1.1); 
+        }
+        .swiper {
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .member {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .member__content--1,
+        .member__content--2 p{
+            font-weight: 600;
+        }
+
+        .member__content--1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .member__content--1 img {
+            width: 12.5rem;
+            height: 12.5rem;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .member__content--2 {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .member__content--2 div {
+            width: 11.6rem;
+            text-align: center;
+        }
+        .member__content--2 >div {
+            border: 1px solid var(--brd-color); 
+        }
+
+        .member__content--2 img {
+            width: 11.5rem;
+            height: 11.5rem;
+            object-fit: cover;
+            border-radius: 0;
+            margin-bottom: 0.5rem;
+        }
+        
+
+        .icon {
+            padding: 1rem 0;
+            text-align: start;
+        }
+        
+        .icon {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .icon h3 {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .icon__desc {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .icon__text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .icon__img img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            width: 300px;
+        }
+
+        .icon__info-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .info__box {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;             
+        }
+
+        .info__box img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .info__title {
+            font-weight: bold;
+            color: var(--black-color);
+        }
+        .channel img{
+            width: 100%;
+            max-width: 250rem;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .content{
+            text-align: start;
+            margin: 1rem 0;
+            padding: 0.5rem 0rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            flex-wrap: wrap;
+            background-color: var(--bg-color);
+        }
+
+        .content__bot{
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+        }
+
+        .content__left img,
+        .content__right img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .content__left {
+            flex: 1;
+            min-width: 15.6rem;
+        }
+
+        .content__right {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            flex: 1.5;
+            min-width: 15.6rem;
+        }
+
+        .content__right p {
+            padding: 0.5rem;
+            border-radius: 1rem;
+        }
+        /* Tablet: 481px – 768px */
+        @media screen and (min-width: 481px) and (max-width: 768px) {
+        #introducepage {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+            "header header"
+            "history history"
+            "member member"
+            "icon icon"
+            "channel channel"
+            "vision vision"
+            "content content"
+            "footer footer";
+            padding: 1.5rem;
+            gap: 1.5rem;
+        }
+
+        #introducepage h3 {
+            font-size: 1.5rem;
+        } 
+        #introducepage h4 {
+            font-size: 1.1rem;
+        }
+
+        .history__content--1 > div,
+        .history__content--4,
+        .history__content--5,
+        .history__content--6,
+        .history__content--7 {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .history__content--2 > div {
+            flex-direction: row;
+            gap: 1rem;
+        }
+        .history__content img {
+            max-width: 100%;
+            width: 45%;
+        }
+
+        .swiper {
+            padding: 15px 0;
+        }
+        .swiper-slide img {
+            max-width: 90%;
+        }
+
+        .member__content--2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .member__content--1 img {
+            width: 10rem;
+            height: 10rem;
+        }
+        .member__content--2 img {
+            width: 100%;
+            height: auto;
+        }
+
+        .icon__desc {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .icon__img img {
+            width: 100%;
+            height: auto;
+        }
+        .info__box {
+            flex-direction: row;
+        }
+        .info__box img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .channel img {
+            width: 100%;
+            height: auto;
+        }
+
+        .content__bot {
+            flex-direction: row;
+            gap: 1rem;
+        }
+        .content__left,
+        .content__right {
+            width: 50%;
+        }
+        .content__right p {
+            font-size: 1rem;
+        }
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media screen and (max-width: 480px) {
+            *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media screen and (max-width: 480px) {
+            #introducepage {
+                display: flex;
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            #introducepage h3 {
+                font-size: 1.3rem;
+            }
+
+            #introducepage h4 {
+                font-size: 1rem;
+            }
+
+            .history__content--1 > div,
+            .history__content--3,
+            .history__content--4,
+            .history__content--5,
+            .history__content--6,
+            .history__content--7,
+            .content__bot,
+            .icon__desc,
+            .member__content--2 {
+                flex-direction: column !important;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .history__content--1 > div > div,
+            .history__content--3 div,
+            .history__content--4 div,
+            .history__content--5 div,
+            .history__content--6 div,
+            .history__content--7 div {
+                width: 100% !important;
+            }
+
+            .member__content--2 div,
+            .content__left,
+            .content__right,
+            .icon__img,
+            .icon__text {
+                width: 100%;
+            }
+
+            .info__box {
+                flex-direction: row;
+            }
+
+            .info__box img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .swiper-slide img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .channel img,
+            .content__left img,
+            .content__right img {
+                max-height: 300px;
+                object-fit: cover;
+            }
+        }
+        }
+
+
+
+
+        
+    </style>
 </head>
 <body>
-    <div class="introduce">
-      <div class="header">
-        <div class="header__top">
-            <div class="header__search">
-              <input type="text" class="header__search-box" placeholder="Tìm kiếm..." name="" id="">
-              <i class="header_search-icon ti-search"></i>
-            </div>
-            <div class="header__logo">
-              <img src="/image/logo/NEU_logo.svg" alt="" class="header__brand-logo">
-              <img src="/image/logo/gnc_logo.svg" alt="" class="header__brand-logo">
-              <img src="/image/logo/fuwa3e-logo.svg" style="width: 9.5rem;" alt="" class="header__brand-logo">
-            </div>
-            <div class="header__navigation">
-              <ul class="header__nav-list">
-                <li class="header__nav-item">
-                  <a href="/index.html" class="header__nav-link">
-                    Trang chủ
-                    <i class="ti-home"></i>
-                  </a>
-                </li>
-                <li class="header__nav-item">
-                  <a href="/pages/products.html" class="header__nav-link">
-                    Sản phẩm/Dịch vụ
-                    <i class="ti-shopping-cart-full"></i>
-                  </a>
-                </li>
-                <li class="header__nav-item">
-                  <a href="/pages/news.html" class="header__nav-link">  
-                    Tin tức
-                    <i class="ti-bell"></i>
-                    <i class="ti-angle-double-down"></i>
-                  </a>
-                  <ul class="header__subnav">
-                    <li class="header_subnav-item">
-                      <a href="/pages/info.html" class="header__subnav-link">
-                        Thông tin
-                      </a>
-                    </li>
-                    <li class="header_subnav-item">
-                      <a href="/pages/event.html" class="header__subnav-link">Sự kiện</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="header__nav-item">
-                  <a href="" class="header__nav-link">
-                    Hỗ trợ 
-                    <i class="ti-headphone-alt"></i>
-                    <i class="ti-angle-double-down"></i>
-                  </a>
-                  <ul class="header__subnav">
-                    <li class="header__subnav-item">
-                      <a href="/pages/contact.html" class="header__subnav-link">Liên hệ</a>
-                    </li>
-                    <li class="header_subnav-item">
-                      <a href="/pages/fag.html" class="header__subnav-link">FAQ</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="header__nav-item">
-                  <a href="/pages/recruitment.html" class="header__nav-link">Tuyển dụng</a>
-                </li>
-              </ul>
-            </div>
-            <div class="header__action-item">
-              <a title="Đăng nhập" href="/pages/login.html" class="header__action-button">
-                <i class="ti-user"></i>
-              </a>
-              <a title="Giỏ hàng" href="" class="header__action-button">               
-                  <i class="ti-shopping-cart"></i>
-              </a>
-            </div>
-        </div>
-      </div>
+    <div id="introducepage">
+        <div class="header"></div>
         <div class="history">
             <h3 class="history__title">LỊCH SỬ PHÁT TRIỂN</h3>
             <div class="history__content">
@@ -99,9 +494,9 @@
                         <div>
                             <p>Đến nay, Fuwa đã có mặt tại các quốc gia:</p>
                             <ul>
-                                <li>Châu Mỹ: Mỹ, Canada.</li>
-                                <li>Châu Âu: Đức, Ý.</li>
-                                <li>Châu Á: Singapore, Trung Quốc, Ấn Độ, Malaysia.</li>
+                                <li><b>Châu Mỹ</b>: Mỹ, Canada.</li>
+                                <li><b>Châu Âu</b>: Đức, Ý.</li>
+                                <li><b>Châu Á</b>: Singapore, Trung Quốc, Ấn Độ, Malaysia.</li>
                             </ul>
                             <p>Trong những năm tiếp theo, Fuwa sẽ tiếp tục tiếp cận các quốc gia khác. Đây có thể là thách thức lớn trong công cuộc chinh phục thị trường quốc tế.</p>
                         </div>
@@ -118,11 +513,27 @@
                 </div>
                 <h4>Năm 2021: Đón nhận các giải thưởng</h4>
                 <div class="history__content--3">
-                    <img src="./../image/introduce/introduce__history--4.jpg" alt="">
+                    <!-- Swiper Slider -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./../image/introduce/introduce__history--4.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./../image/introduce/introduce__history--4.1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./../image/introduce/introduce__history--4.2.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./../image/introduce/introduce__history--4.3.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
                     <div>
-                        <p>Nhờ sự nỗ lực không ngừng nghỉ của tập thể cán bộ nhân viên, Fuwa đã vinh dự nhận được nhiều giải thưởng danh giá trong suốt chặng đường phát triển:</p>
+                        <p>Nhờ sự nỗ lực không ngừng nghỉ của tập thể cán bộ nhân viên, <b>Fuwa</b> đã vinh dự nhận được nhiều giải thưởng danh giá trong suốt chặng đường phát triển:</p>
                         <ul>
-                            <li>2 giải thưởng và OCOP 4 sao</li>
+                            <li>2 giải thưởng và <b>OCOP</b> 4 sao</li>
                             <li>Phát triển bộ sản phẩm Home Care</li>
                             <li>Xây dựng nhà xưởng hướng đến xuất khẩu</li>
                         </ul>
@@ -131,11 +542,11 @@
                 <h4>Năm 2020: Phát triển thị trường & Đẩy mạnh kênh phân phối</h4>
                 <div class="history__content--4">
                     <div>
-                        <p>Fuwa luôn đặt mục tiêu phát triển bền vững và khẳng định vị thế dẫn đầu trong ngành tẩy rửa sinh học. Để đạt được mục tiêu này, công ty đã và đang thực hiện chiến lược Phát triển thị trường & Đẩy mạnh kênh phân phối hiệu quả.</p>
+                        <p><b>Fuwa</b> luôn đặt mục tiêu phát triển bền vững và khẳng định vị thế dẫn đầu trong ngành tẩy rửa sinh học. Để đạt được mục tiêu này, công ty đã và đang thực hiện chiến lược <b>Phát triển thị trường & Đẩy mạnh kênh phân phối hiệu quả</b>.</p>
                         <ul>
-                            <li>Xây dựng hệ thống mạng lưới phân phối Toàn Quốc.</li>
+                            <li>Xây dựng hệ thống mạng lưới phân phối <b>Toàn Quốc</b>.</li>
                             <li>Đa dạng hóa và nâng cao chất lượng sản phẩm.</li>
-                            <li>Đạt OCOP 3 sao.</li>
+                            <li>Đạt <b>OCOP</b> 3 sao.</li>
                         </ul>
                     </div>
                     <img src="./../image/introduce/introduce__history--5.jpg" alt="">
@@ -154,9 +565,9 @@
                 <h4>Năm 2018: Phát triển sản phẩm & Thử nghiệm quy mô nhỏ</h4>
                 <div class="history__content--6">
                     <div>
-                        <p>Để mang lại giá trị thực sự, để cho ra đời 1 sản phẩm tốt, Fuwa3e Team đã dành rất nhiều thời gian để “Phát triển sản phẩm & thử nghiệm quy mô nhỏ” trước khi mở rộng quy mô ra thị trường. Giai đoạn này, Fuwa3e Team tập trung vào:</p>
+                        <p>Để mang lại giá trị thực sự, để cho ra đời 1 sản phẩm tốt, <b>Fuwa3e Team</b> đã dành rất nhiều thời gian để <b>“Phát triển sản phẩm & Thử nghiệm quy mô nhỏ”</b> trước khi mở rộng quy mô ra thị trường. Giai đoạn này, Fuwa3e Team tập trung vào:</p>
                         <ul>
-                            <li>Phát triển Sản Phẩm: Nước rửa tay, rửa chén,...</li>
+                            <li>Phát triển Sản Phẩm: <b>Nước rửa tay, rửa chén,...</b></li>
                             <li>Thử nghiệm với các nhóm người dùng..</li>
                         </ul>
                     </div>
@@ -166,7 +577,7 @@
                 <div class="history__content--7">
                     <img src="./../image/introduce/introduce__history--8.jpg" alt="">
                     <div>
-                        <p>Nhóm nghiên cứu Fuwa3e Team được thành lập vào Tháng 09 năm 2016, với mục đích: Phát triển & cung cấp hệ sinh thái các sản phẩm thiên nhiên – thân thiện môi trường & sức khỏe bền lâu cho con người.</p>
+                        <p>Nhóm nghiên cứu <b>Fuwa3e Team</b> được thành lập vào <b>tháng 09 năm 2016</b>, với mục đích: Phát triển & cung cấp hệ sinh thái các sản phẩm thiên nhiên – thân thiện môi trường & sức khỏe bền lâu cho con người.</p>
                         <p>Thời gian đầu, Fuwa3e Team tập trung vào:</p>
                         <ul>
                             <li>Nghiên cứu chiết xuất Enzyme</li>
@@ -183,7 +594,7 @@
                 <img src="./../image/introduce/introduce__member--1.jpeg" alt="">
                 <p>CEO - MRS. BÙI THỊ BÍCH NGỌC</p>
             </div>
-            <div class="member_content--2">
+            <div class="member__content--2">
                 <div>
                     <img src="./../image/introduce/introduce__member--2.jpeg" alt="">
                     <p>COO - MR. ĐỖ XUÂN TIẾN</p>
@@ -194,123 +605,92 @@
                 </div>
                 <div>
                     <img src="./../image/introduce/introduce__member--4.jpeg" alt="">
-                    <p>CPO- MR. LÊ DUY HOÀNG</p>
+                    <p>CPO - MR. LÊ DUY HOÀNG</p>
                 </div>
                 <div>
                     <img src="./../image/introduce/introduce__member--5.jpeg" alt="">
-                    <p>CFO- MRS. LƯƠNG THỊ TUYỀN</p>
+                    <p>CFO - MRS. LƯƠNG THỊ TUYỀN</p>
                 </div>
             </div>
-        </div>     
+        </div>
         <div class="icon">
             <h3>CHÚNG TÔI LÀ AI</h3>
-            <div>
-                <p>Fuwa Biotech là một doanh nghiệp tiên phong tại Việt Nam sử dụng vỏ dứa để sản xuất các sản phẩm tẩy rửa eco enzyme.</p>
-                <ul>
-                    <li>Sản phẩm được thiết kế với mục tiêu giảm độ độc hại trong các sản phẩm công nghiệp và dùng trong gia đình.</li>
-                    <li>Sản phẩm được phân phối thông qua mạng lưới Refill để giảm thiểu việc sử dụng chai nhựa (SDG 3,8,12,13).</li>
-                </ul>
-            </div>
-            <div id="note">
-                <div>
+            <div class="icon__desc">
+                <div class="icon__text">
+                    <p>Fuwa Biotech là một doanh nghiệp tiên phong tại Việt Nam sử dụng vỏ dứa để sản xuất các sản phẩm tẩy rửa eco enzyme.</p>
+                    <ul>
+                        <li>Sản phẩm được thiết kế với mục tiêu giảm độ độc hại trong các sản phẩm công nghiệp và dùng trong gia đình.</li>
+                        <li>Sản phẩm được phân phối thông qua mạng lưới Refill để giảm thiểu việc sử dụng chai nhựa (SDG 3,8,12,13).</li>
+                    </ul>
+                </div>
+                <div class="icon__img">
                     <img src="./../image/introduce/introduce__icon--0.png" alt="">
                 </div>
-                <div>
+            </div>
+            <div class="icon__info-wrapper">
+                <div class="info__box">
+                    <img src="./../image/introduce/introduce__icon--1.jpeg" alt="">
                     <div>
-                        <img src="./../image/introduce/introduce__icon--1.jpeg" alt="">
-                        <p>Lan tỏa nhận thức</p>
-                        <p>An toàn cho làn da và sức khỏe</p>
+                        <p class="info__title">Lan tỏa nhận thức</p>
+                        <p class="info__desc">An toàn cho làn da và sức khỏe</p>
                     </div>
+                </div>
+                <div class="info__box">
+                    <img src="./../image/introduce/introduce__icon--2.jpeg" alt="">
                     <div>
-                        <img src="./../image/introduce/introduce__icon--2.jpeg" alt="">
-                        <p>Tái sử dụng rác thải</p>
-                        <p> Tăng 250 TẤN vỏ Dứa</p>
+                        <p class="info__title">Tái sử dụng rác thải</p>
+                        <p class="info__desc">Tăng 250 TẤN vỏ Dứa</p>
                     </div>
+                </div>
+                <div class="info__box">
+                    <img src="./../image/introduce/introduce__icon--3.jpeg" alt="">
                     <div>
-                        <img src="./../image/introduce/introduce__icon--3.jpeg" alt="">
-                        <p>Giảm 150,000 chai nhựa</p>
-                        <p>Giảm 54,000 Lít hóa chất độc hại (SLS,…)</p>
+                        <p class="info__title">Giảm 150,000 chai nhựa</p>
+                        <p class="info__desc">Giảm 54,000 Lít hóa chất độc hại (SLS,…)</p>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="channel">
+            <h3>CHIẾN LƯỢC ĐA KÊNH</h3>
+            <img src="./../image/introduce/introduce__channel.jpg" alt="">
         </div>
         <div class="vision">
             <h3>TẦM NHÌN & SỨ MỆNH</h3>
-            <p><strong>Tầm nhìn:</strong> Trở thành thương hiệu tiên phong hàng đầu Đông Nam Á trong lĩnh vực sản phẩm tẩy rửa sinh học và bảo vệ môi trường.</p>
-            <p><strong>Sứ mệnh:</strong> Mang đến giải pháp thân thiện với sức khỏe và môi trường, đồng thời thay đổi nhận thức cộng đồng về tiêu dùng bền vững.</p>
-        </div>    
-        <div class="content">
-            <h3 id="title">TRẠM ĐONG ĐẦY - REFILL</h3>
-            <img id="pic1" src="./../image/introduce/introduce__content--1.jpg" alt="">
-            <div id="nd">
-                <p>Với phương châm “Kiến tạo lối sống xanh”</p>
-                <p>Năm 2020, Fuwa đã quyết tâm triển khai dự án “Trạm Đong Đầy” thông qua các hình thức trải nghiệm thú vị nhằm thúc đẩy khách hàng hành động xanh từ những điều nhỏ nhặt nhất:</p>
-                <ul>
-                    <li>Mang vỏ chai đã dùng hết và tự làm đầy thông qua các Trạm Đong Đầy (Refill Station) của Fuwa với mức giá ưu đãi.</li>
-                    <li>Mang vỏ chai đã hết để đổi phiếu tích điểm, voucher giảm giá.</li>
-                </ul>   
-                <p>Hiện tại, thương hiệu đang có hơn 200 trạm refill tại 13 tỉnh thành trên toàn quốc, tập trung chủ yếu ở các thành phố lớn như Hà Nội, Hải Phòng, Đà Nẵng, Hồ Chí Minh và các tỉnh miền Bắc.</p>
-                <p>Fuwa tin tưởng với dự án này, không những giúp nhiều người có thể dễ dàng sử dụng sản phẩm chất lượng mà còn góp phần bảo vệ môi trường và hệ sinh thái.</p>
-            </div>
-            <img id= "pic2"src="./../image/introduce/introduce__content--2.jpg" alt="">
+            <p><b>Tầm nhìn:</b> Trở thành thương hiệu tiên phong hàng đầu Đông Nam Á trong lĩnh vực sản phẩm tẩy rửa sinh học và bảo vệ môi trường.</p>
+            <p><b>Sứ mệnh:</b> Mang đến giải pháp thân thiện với sức khỏe và môi trường, đồng thời thay đổi nhận thức cộng đồng về tiêu dùng bền vững.</p>
         </div>
-        <footer class="footer">
-            <div class="footer__container">
-              <div class="footer__column footer__column--info">
-                <h4 class="footer__title">VĂN PHÒNG FUWA</h4>
-                <ul class="footer__list">
-                  <li class="footer__item"><strong>Nhà máy:</strong> 04 Đồng Cổ, Phường Hàm Rồng, TP Thanh Hóa, Tỉnh Thanh Hóa</li>
-                  <li class="footer__item"><strong>TP.HCM:</strong> 09 Đỗ Thừa Tự, Phường Tân Quý, Quận Tân Phú, TP. Hồ Chí Minh</li>
-                  <li class="footer__item"><strong>Hà Nội:</strong> Số 2 Ngách 23 Ngõ 62 Nguyễn Chí Thanh, Quận Đống Đa, TP. Hà Nội</li>
-                  <li class="footer__item"><strong>Đà Nẵng:</strong> 114 Đường Văn An, Phường Mân Thái, Quận Sơn Trà, TP. Đà Nẵng</li>
-                  <li class="footer__item"><strong>VP Đức:</strong> Ziehtlenbühndweg 22a, 77704 Oberkirch, Baden-Württemberg, Deutschland</li>
-                </ul>
-              </div>
-          
-              <div class="footer__column footer__column--policy">
-                <h4 class="footer__title">CHÍNH SÁCH FUWA</h4>
-                <ul class="footer__list">
-                  <li class="footer__item">Chính sách bán hàng</li>
-                  <li class="footer__item">Điều khoản sử dụng</li>
-                  <li class="footer__item">Điểm bán hàng</li>
-                </ul>
-              </div>
-          
-              <div class="footer__column footer__column--contact">
-                <h4 class="footer__title">THÔNG TIN LIÊN HỆ</h4>
-                <p class="footer__item"><i class="ti-headphone-alt"></i> Kinh Doanh: 0972.377.898 (Hotline)</p>
-              </div>
-          
-              <div class="footer__column footer__column--links">
-                <h4 class="footer__title">WEBSITE LIÊN KẾT</h4>
-                <div class="footer__logos">
-                  <a href="#" class="footer__logo-link">
-                    <img src="/image/homepage/footer-ecoenzyme.jpg" alt="EcoEnzyme" class="footer__logo">
-                  </a>
-                  <a href="#" class="footer__logo-link">
-                    <img src="/image/homepage/footer-sweet-boss.jpg" alt="SweetieBoss" class="footer__logo">
-                  </a>
-                  <a href="#" class="footer__logo-link">
-                    <img src="/image/homepage/footer-refill3er.jpg" alt="Refill Station" class="footer__logo">
-                  </a>
-                </div>
-              </div>
-              
-          
-              <div class="footer__column footer__column--social">
-                <h4 class="footer__title">KẾT NỐI VỚI FUWA</h4>
-                <div class="footer__social-icons">
-                  <a href="#" class="footer__icon"><i class="ti-facebook"></i></a>
-                  <a href="#" class="footer__icon"><i class="ti-world"></i></a>
-                  <a href="#" class="footer__icon"><i class="ti-instagram"></i></a>
-                  <a href="#" class="footer__icon"><i class="ti-music-alt"></i></a>
-                  <a href="#" class="footer__icon"><i class="ti-youtube"></i></a>
-                  <a href="#" class="footer__icon"><i class="ti-linkedin"></i></a>
-                </div>
-              </div>
+        <div class="content">
+            <div class="content__top">
+                <h3>TRẠM ĐONG ĐẦY - REFILL</h3>
             </div>
-          </footer>
+            <div class="content__bot">
+                <div class="content__left">
+                    <img src="./../image/introduce/introduce__content--1.jpg" alt="">
+                </div>
+                <div class="content__right">
+                    <div>
+                        <p>Với phương châm “Kiến tạo lối sống xanh”</p>
+                        <p>Năm 2020, Fuwa đã quyết tâm triển khai dự án “Trạm Đong Đầy” thông qua các hình thức trải nghiệm thú vị nhằm thúc đẩy khách hàng hành động xanh từ những điều nhỏ nhặt nhất như refill với mức giá ưu đãi hay nhận voucher tích điểm, đổi quà.</p>  
+                        <p>Hiện tại, thương hiệu đang có hơn 200 trạm refill tại 13 tỉnh thành trên toàn quốc, tập trung chủ yếu ở các thành phố lớn như Hà Nội, Hải Phòng, Đà Nẵng, Hồ Chí Minh và các tỉnh miền Bắc.</p>
+                        <p>Fuwa tin tưởng với dự án này, không những giúp nhiều người có thể dễ dàng sử dụng sản phẩm chất lượng mà còn góp phần bảo vệ môi trường và hệ sinh thái.</p>
+                    </div>
+                    <img src="./../image/introduce/introduce__content--2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
     </div>
-    
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+          loop: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          slidesPerView: 1,
+          spaceBetween: 20,
+        });
+      </script>
 </body>
 </html>
