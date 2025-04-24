@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/faq.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
       rel="stylesheet"
@@ -88,30 +89,69 @@
             </div>
         </div>
       </div>
-      <div class="content">
-        <h2 class="content__title">Câu hỏi thường gặp (FAQ)</h2>
-        <div class="content__description">
-          <h3>1. Trạm Refill là gì?</h3>
-          <p>Trạm Refill là mô hình cho phép bạn mang chai/lọ cá nhân đến để đổ đầy lại các sản phẩm như dầu gội, sữa tắm, nước rửa chén... nhằm giảm thiểu rác thải nhựa.</p>
-
-          <h3>2. Vì sao nên sử dụng dịch vụ Refill?</h3>
-          <p>Giảm rác thải nhựa, tiết kiệm chi phí và góp phần bảo vệ môi trường.</p>
-
-          <h3>3. Tôi có thể mang loại chai nào đến refill?</h3>
-          <p>Bạn có thể mang bất kỳ chai/lọ sạch có nắp đậy kín, tốt nhất nên là chai nhựa PET hoặc thủy tinh đã được vệ sinh.</p>
-
-          <h3>4. Các sản phẩm tại trạm có an toàn không?</h3>
-          <p>Có. Các sản phẩm đều có nguồn gốc thiên nhiên, không chứa hóa chất độc hại và đã qua kiểm định.</p>
-
-          <h3>5. Giá sản phẩm refill có rẻ hơn mua chai mới không?</h3>
-          <p>Có! Do bạn không phải trả thêm chi phí cho bao bì, nên sản phẩm refill thường rẻ hơn từ 10–30% so với mua mới.</p>
-
-          <h3>6. Làm thế nào để biết lịch hoạt động của trạm?</h3>
-          <p>Bạn có thể theo dõi lịch hoạt động tại fanpage chính thức hoặc mục “Tin tức” trên website.</p>
-
-          <h3>7. Trạm Refill có mặt ở đâu?</h3>
-          <p>Hiện tại chúng tôi đặt tại NEU và đang mở rộng đến các trường đại học, cộng đồng xanh và khu dân cư.</p>
+      <div class="faq__content">
+        <h2 class="faq__title">Câu hỏi thường gặp (FAQ)</h2>
+        <div class="faq__list">
+          <div class="faq__item" onclick="toggleAnswer('answer1')">
+            <h3 class="faq__question">1. Trạm Refill là gì?</h3>
+            <div id="answer1" class="faq__answer">
+              <p>Trạm Refill là mô hình cho phép bạn mang chai/lọ cá nhân đến để đổ đầy lại các sản phẩm như dầu gội, sữa tắm, nước rửa chén... nhằm giảm thiểu rác thải nhựa.</p>
+            </div>
+          </div>
+      
+          <div class="faq__item" onclick="toggleAnswer('answer2')">
+            <h3 class="faq__question">2. Vì sao nên sử dụng dịch vụ Refill?</h3>
+            <div id="answer2" class="faq__answer">
+              <p>Giảm rác thải nhựa, tiết kiệm chi phí và góp phần bảo vệ môi trường.</p>
+            </div>
+          </div>
+      
+          <div class="faq__item" onclick="toggleAnswer('answer3')">
+            <h3 class="faq__question">3. Tôi có thể mang loại chai nào đến refill?</h3>
+            <div id="answer3" class="faq__answer">
+              <p>Bạn có thể mang bất kỳ chai/lọ sạch có nắp đậy kín, tốt nhất nên là chai nhựa PET hoặc thủy tinh đã được vệ sinh.</p>
+            </div>
+          </div>
+      
+          <div class="faq__item" onclick="toggleAnswer('answer4')">
+            <h3 class="faq__question">4. Các sản phẩm tại trạm có an toàn không?</h3>
+            <div id="answer4" class="faq__answer">
+              <p>Có. Các sản phẩm đều có nguồn gốc thiên nhiên, không chứa hóa chất độc hại và đã qua kiểm định.</p>
+            </div>
+          </div>
+      
+          <div class="faq__item" onclick="toggleAnswer('answer5')">
+            <h3 class="faq__question">5. Giá sản phẩm refill có rẻ hơn mua chai mới không?</h3>
+            <div id="answer5" class="faq__answer">
+              <p>Có! Do bạn không phải trả thêm chi phí cho bao bì, nên sản phẩm refill thường rẻ hơn từ 10–30% so với mua mới.</p>
+            </div>
+          </div>
+      
+          <div class="faq__item" onclick="toggleAnswer('answer6')">
+            <h3 class="faq__question">6. Làm thế nào để biết lịch hoạt động của trạm?</h3>
+            <div id="answer6" class="faq__answer">
+              <p>Bạn có thể theo dõi lịch hoạt động tại fanpage chính thức hoặc mục “Tin tức” trên website.</p>
+            </div>
+          </div>
+      
+          <div class="faq__item" onclick="toggleAnswer('answer7')">
+            <h3 class="faq__question">7. Trạm Refill có mặt ở đâu?</h3>
+            <div id="answer7" class="faq__answer">
+              <p>Hiện tại chúng tôi đặt tại NEU và đang mở rộng đến các trường đại học, cộng đồng xanh và khu dân cư.</p>
+            </div>
+          </div>
         </div>
+      </div>
+      
+      <div class="faq__form-container">
+        <h2 class="faq__form-title">Gửi câu hỏi của bạn</h2>
+        <form action="/submit-question" method="POST" class="faq__form">
+          <input type="text" name="name" placeholder="Họ và tên" required class="faq__form-input"/>
+          <input type="email" name="email" placeholder="Email của bạn" required class="faq__form-input"/>
+          <input type="tel" name="phone" placeholder="Số điện thoại" required class="faq__form-input"/>
+          <textarea name="question" rows="4" placeholder="Câu hỏi của bạn" required class="faq__form-textarea"></textarea>
+          <button type="submit" class="faq__form-button">Gửi câu hỏi</button>
+        </form>
       </div>
 
       <footer class="footer">
@@ -171,5 +211,15 @@
         </div>
       </footer>
     </div>
+    <script>
+      function toggleAnswer(id) {
+        const answer = document.getElementById(id);
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+        } else {
+          answer.style.display = "block";
+        }
+      }
+    </script>
   </body>
 </html>
