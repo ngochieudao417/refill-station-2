@@ -97,7 +97,7 @@
       <div class="header__top">
           <div class="header__search">
             <input type="text" class="header__search-box" placeholder="Tìm kiếm..." name="" id="">
-            <i class="header__search-icon ti-search"></i>
+            <i class="header_search-icon ti-search"></i>
           </div>
           <div class="header__logo">
             <img src="/image/logo/NEU_logo.svg" alt="" class="header__brand-logo">
@@ -107,21 +107,28 @@
           <div class="header__navigation">
             <ul class="header__nav-list">
               <li class="header__nav-item">
-                <a href="/index.html" class="header__nav-link">Trang chủ</a>
+                <a href="/index.html" class="header__nav-link">
+                  Trang chủ
+                  <i class="ti-home"></i>
+                </a>
               </li>
               <li class="header__nav-item">
                 <a href="/pages/products.html" class="header__nav-link">
                   Sản phẩm/Dịch vụ
+                  <i class="ti-shopping-cart-full"></i>
                 </a>
               </li>
               <li class="header__nav-item">
                 <a href="/pages/news.html" class="header__nav-link">  
                   Tin tức
+                  <i class="ti-bell"></i>
                   <i class="ti-angle-double-down"></i>
                 </a>
                 <ul class="header__subnav">
                   <li class="header_subnav-item">
-                    <a href="/pages/info.html"   class="header__subnav-link">Thông tin</a>
+                    <a href="/pages/info.html" class="header__subnav-link">
+                      Thông tin
+                    </a>
                   </li>
                   <li class="header_subnav-item">
                     <a href="/pages/event.html" class="header__subnav-link">Sự kiện</a>
@@ -130,7 +137,8 @@
               </li>
               <li class="header__nav-item">
                 <a href="" class="header__nav-link">
-                  Hỗ trợ
+                  Hỗ trợ 
+                  <i class="ti-headphone-alt"></i>
                   <i class="ti-angle-double-down"></i>
                 </a>
                 <ul class="header__subnav">
@@ -151,8 +159,9 @@
             <a title="Đăng nhập" href="/pages/login.html" class="header__action-button">
               <i class="ti-user"></i>
             </a>
-            <a title="Giỏ hàng" href="" class="header__action-button">               
+            <a title="Giỏ hàng" href="/pages/cart.html" class="header__action-button">               
                 <i class="ti-shopping-cart"></i>
+                <span class="cart-count">0</span>
             </a>
           </div>
       </div>
