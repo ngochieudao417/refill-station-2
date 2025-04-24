@@ -51,7 +51,7 @@
                       </a>
                     </li>
                     <li class="header_subnav-item">
-                      <a href="/pages/event.html" class="header__subnav-link">Sự kiện</a>
+                      <a href="/pages/events.html" class="header__subnav-link">Sự kiện</a>
                     </li>
                   </ul>
                 </li>
@@ -256,4 +256,23 @@
       </footer>
     </div>
   </body>
+  <script>
+    function updateCartCount() {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  
+          let cartCount = document.querySelector('.cart-count');
+          if (!cartCount) {
+              cartCount = document.createElement('span');
+              cartCount.className = 'cart-count';
+              document.querySelector('.header__action-button[title="Giỏ hàng"]').appendChild(cartCount);
+          }
+          cartCount.textContent = totalItems;
+      }
+  
+      document.addEventListener('DOMContentLoaded', () => {
+          updateCartCount();
+          loadProduct();
+      });
+  </script>
 </html>

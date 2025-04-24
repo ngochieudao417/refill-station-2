@@ -52,7 +52,7 @@
                   </a>
                 </li>
                 <li class="header_subnav-item">
-                  <a href="/pages/event.html" class="header__subnav-link">Sự kiện</a>
+                  <a href="/pages/events.html" class="header__subnav-link">Sự kiện</a>
                 </li>
               </ul>
             </li>
@@ -160,6 +160,7 @@
           </h2>
           <p class="news-summary" style="display: -webkit-box;
           -webkit-line-clamp: 5;
+          line-clamp: 5;
           -webkit-box-orient: vertical;">Và hơn thế, việc ‘ngại tái chế, lười tái chế’ sẽ không còn khó khăn hay chỉ là lý
             thuyết suông nữa. NGC sẽ tạo cơ hội để chính bạn tham gia vào quá trình làm xanh môi trường sống xung quanh
             qua cách thú vị nhất.</p>
@@ -281,6 +282,23 @@
           video.pause();
           video.currentTime = 0;
         });
+      });
+      function updateCartCount() {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  
+          let cartCount = document.querySelector('.cart-count');
+          if (!cartCount) {
+              cartCount = document.createElement('span');
+              cartCount.className = 'cart-count';
+              document.querySelector('.header__action-button[title="Giỏ hàng"]').appendChild(cartCount);
+          }
+          cartCount.textContent = totalItems;
+      }
+  
+      document.addEventListener('DOMContentLoaded', () => {
+          updateCartCount();
+          loadProduct();
       });
     </script>
   </div>

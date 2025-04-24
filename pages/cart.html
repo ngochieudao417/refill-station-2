@@ -49,7 +49,7 @@
                       </a>
                     </li>
                     <li class="header_subnav-item">
-                      <a href="/pages/event.html" class="header__subnav-link">Sự kiện</a>
+                      <a href="/pages/events.html" class="header__subnav-link">Sự kiện</a>
                     </li>
                   </ul>
                 </li>
@@ -352,9 +352,11 @@
             loadCartItems();
             updateCartCount();
         }
-
+        
         document.addEventListener('DOMContentLoaded', () => {
+            updateCartCount();
             loadCartItems();
+            
 
             // Xử lý nút áp dụng mã giảm giá (chức năng placeholder)
             document.querySelector('.coupon-btn').addEventListener('click', () => {
