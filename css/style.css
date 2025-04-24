@@ -25,3 +25,22 @@ body {
   --bg-color: #e8f1fd; /*dùng cho background */
   --bg-text-color: #f3f3f3;
 }
+/* Cart count badge */
+.header__action-button {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #e53935;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

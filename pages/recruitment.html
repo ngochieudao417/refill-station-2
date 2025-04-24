@@ -13,7 +13,6 @@
   </head>
   <body>
     <div id="recruitmentpage">
-      <!-- Header -->
       <div class="header">
         <div class="header__top">
             <div class="header__search">
@@ -52,7 +51,7 @@
                       </a>
                     </li>
                     <li class="header_subnav-item">
-                      <a href="/pages/event.html" class="header__subnav-link">Sự kiện</a>
+                      <a href="/pages/events.html" class="header__subnav-link">Sự kiện</a>
                     </li>
                   </ul>
                 </li>
@@ -80,8 +79,9 @@
               <a title="Đăng nhập" href="/pages/login.html" class="header__action-button">
                 <i class="ti-user"></i>
               </a>
-              <a title="Giỏ hàng" href="" class="header__action-button">               
+              <a title="Giỏ hàng" href="/pages/cart.html" class="header__action-button">               
                   <i class="ti-shopping-cart"></i>
+                  <span class="cart-count">0</span>
               </a>
             </div>
         </div>
@@ -256,4 +256,23 @@
       </footer>
     </div>
   </body>
+  <script>
+    function updateCartCount() {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  
+          let cartCount = document.querySelector('.cart-count');
+          if (!cartCount) {
+              cartCount = document.createElement('span');
+              cartCount.className = 'cart-count';
+              document.querySelector('.header__action-button[title="Giỏ hàng"]').appendChild(cartCount);
+          }
+          cartCount.textContent = totalItems;
+      }
+  
+      document.addEventListener('DOMContentLoaded', () => {
+          updateCartCount();
+          loadProduct();
+      });
+  </script>
 </html>
