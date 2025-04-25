@@ -55,26 +55,15 @@
   position: relative;
   font-size: 3.6rem;
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--highlight-text);
   margin-bottom: 2rem;
   z-index: 1;
   display: inline-block;
 }
 
-.highlight {
-  position: absolute;
-  top: 60%;
-  left: 0%;
-  width: 100%;
-  height: 60%;
-  background-color: var(--accent-color);
-  z-index: -1;
-  display: block;
-  opacity: 0.4;
-}
-
 .secondary-text-color {
-  color: var(--secondary-text-color);
+  color: var(--highlight-text);
+  font-size: 600 !important;
 }
 
 /* Info text */
@@ -90,19 +79,22 @@
   display: inline-block;
   margin-top: 2rem;
   font-size: 1.8rem;
+  font-weight: 600;
   padding: 1rem 2rem;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  border: none;
+  background-color: transparent;
+  border-color: var(--highlight-text);
+  border-width: 0.1rem;
+  border-style: solid;
+  color: var(--highlight-text);
   border-radius: 3rem;
   text-decoration: none;
-  transition: background-color 0.3s;
-  transition: scale 0.3s;
+  transition: background-color 0.5s;
+  transition: color 0.3s;
 }
 
 .recruitment__button:hover {
-  background-color: var(--secondary-color);
-  scale: 1.05;
+  background-color: var(--highlight-text);
+  color: #ffffff;
 }
 
 /* Section container */
@@ -113,19 +105,19 @@
 
 .recruitment__heading {
   font-size: 2.2rem;
-  color: var(--text-color);
+  color: var(--highlight-text);
+  font-weight: 600;
   margin-bottom: 2rem;
   position: relative;
 }
 
 .bullet {
   position: absolute;
-  left: -2%;
+  left: -1rem;
   top: 2%;
-  background-color: var(--primary-color);
-  width: 0.4rem;
+  background-color: #4e7a34;
+  width: 0.6rem;
   height: 2rem;
-  border-radius: 1rem;
 }
 
 /* call */
@@ -134,7 +126,7 @@
   margin-top: 4rem;
   padding: 2rem;
   background-color: #f3f3f3;
-  border-left: 6px solid var(--accent-color);
+  border-left: 4px solid var(--highlight-text);
   border-radius: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
@@ -163,7 +155,7 @@
 
 .method__item {
   background-color: #f3f3f3;
-  border-left: 6px solid var(--accent-color);
+  border-left: 4px solid var(--highlight-text);
   padding: 1.5rem 2rem;
   margin-bottom: 1.5rem;
   border-radius: 0.8rem;
@@ -178,7 +170,7 @@
 }
 
 .method__title span {
-  color: var(--secondary-text-color);
+  color: var(--highlight-text);
 }
 
 .method__date {

@@ -59,7 +59,14 @@ body {
 }
 
 .category h2 {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.category h3 {
+  font-weight: bold;
+  line-height: 1.2rem;
 }
 
 .product-grid {
@@ -104,6 +111,16 @@ body {
   font-weight: bold;
   color: #d33;
 }
+
+.bullet {
+  position: absolute;
+  left: -1rem;
+  top: -6%;
+  background-color: #4e7a34;
+  width: 0.6rem;
+  height: 2rem;
+}
+
 @media (max-width: 1100px) {
   .hero {
     height: auto;
@@ -128,7 +145,6 @@ body {
   .decor-container {
     display: none;
   }
-  
 }
 
 /* css lai cho header va icon */

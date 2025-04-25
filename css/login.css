@@ -10,6 +10,8 @@
 
 .login__heading {
   font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--highlight-text);
 }
 
 .login__input {
@@ -25,7 +27,7 @@
 }
 
 .login__input:focus {
-  border-color: var(--primary-color);
+  border-color: #4e7a34;
   outline: none;
 }
 
@@ -33,18 +35,19 @@
   width: 100%;
   padding: 0.875rem;
   margin-top: 1rem;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  border: none;
+  background-color: transparent;
+  border: 1.6px solid var(--highlight-text);
+  color: var(--highlight-text);
   border-radius: 0.625rem;
-  font-size: 1.125rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
 }
 
 .login__btn--primary:hover {
-  background-color: var(--primary-color);
-  transform: scale(1.05);
+  background-color: var(--highlight-text);
+  color: white;
 }
 
 .login__register-prompt {
@@ -54,7 +57,7 @@
 }
 
 .login__register-link {
-  color: var(--primary-color);
+  color: #4e7a34;
   cursor: pointer;
   text-decoration: underline;
   font-weight: bold;
@@ -70,12 +73,12 @@
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   animation: fadeIn 0.3s ease forwards;
 }
 
 .modal__content {
-  background-color: white;
+  background-color: #f3f3f3;
   margin: 12rem auto;
   padding: 2rem;
   width: 90%;
@@ -89,14 +92,19 @@
 }
 
 .modal__title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--highlight-text);
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes popIn {
@@ -133,7 +141,7 @@
 }
 
 .modal__input:focus {
-  border-color: var(--primary-color);
+  border-color: #4e7a34;
   outline: none;
 }
 
@@ -141,31 +149,35 @@
   width: 100%;
   padding: 0.875rem;
   margin-top: 1rem;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
+  background-color: transparent;
+  border: 1.6px solid var(--highlight-text);
+  color: var(--highlight-text);
   border-radius: 0.625rem;
-  font-size: 1.125rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
 }
 
 .modal__btn--primary:hover {
-  background-color: var(--primary-color);
-  transform: scale(1.05);
+  background-color: var(--highlight-text);
+  color: white;
 }
 
 /* responsive */
 @media (max-width: 1074px) {
-  .login, .modal__content {
+  .login,
+  .modal__content {
     padding: 1.5rem;
   }
 
-  .login__input, .modal__input {
+  .login__input,
+  .modal__input {
     font-size: 1rem;
   }
 
-  .login__btn, .modal__btn {
+  .login__btn,
+  .modal__btn {
     font-size: 1rem;
     padding: 0.75rem;
   }
