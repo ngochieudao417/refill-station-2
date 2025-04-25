@@ -41,6 +41,7 @@
 }
 
 .event__content {
+    padding: 1rem;
     flex: 1;
 }
 
@@ -59,17 +60,19 @@
 }
 
 .event__link {
+    display: flex;
+    text-align: center;
     text-decoration: none;
     color: inherit;
 }
 
 .event__read-more {
     font-size: 1rem;
+    text-decoration: underline;
     color: var(--highlight-text);
-    text-decoration: none;
 }
 
 .event__read-more:hover {
-    text-decoration: underline;
+    font-weight: bold;
+    
 }
-
