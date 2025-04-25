@@ -45,15 +45,16 @@
 }
 
 .event__title {
+    margin-top: 0.5rem;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
+    color: var(--black-color);
     margin-bottom: 1rem;
 }
 
 .event__description {
     font-size: 1rem;
-    color: #666;
+    color: var(--darker-gray);
     line-height: 1.6;
 }
 
@@ -64,7 +65,7 @@
 
 .event__read-more {
     font-size: 1rem;
-    color: #007bff;
+    color: var(--highlight-text);
     text-decoration: none;
 }
 

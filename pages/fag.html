@@ -19,10 +19,12 @@
     <div id="faq">
       <div class="header">
         <div class="header__top">
-            <div class="header__search">
-              <input type="text" class="header__search-box" placeholder="Tìm kiếm..." name="" id="">
-              <i class="header_search-icon ti-search"></i>
-            </div>
+          <!-- menu cho tablet, moble -->
+          <div class="header__hamburger" id="hamburger-icon">
+            <i class="ti-menu"></i>
+          </div>
+          <!-- menu cho tablet, moble -->
+      
             <div class="header__logo">
               <img src="/image/logo/NEU_logo.svg" alt="" class="header__brand-logo">
               <img src="/image/logo/gnc_logo.svg" alt="" class="header__brand-logo">
@@ -43,24 +45,34 @@
                   </a>
                 </li>
                 <li class="header__nav-item">
-                  <a href="/pages/news.html" class="header__nav-link">  
+                  <a href="#" class="header__nav-link">  
                     Tin tức
                     <i class="ti-bell"></i>
                     <i class="ti-angle-double-down"></i>
                   </a>
                   <ul class="header__subnav">
                     <li class="header_subnav-item">
-                      <a href="/pages/info.html" class="header__subnav-link">
-                        Thông tin
+                      <a href="/pages/introduce.html" class="header__subnav-link">
+                        Giới thiệu
+                      </a>
+                    </li>
+                    <li class="header_subnav-item">
+                      <a href="/pages/news.html" class="header__subnav-link">
+                        Tin tức
                       </a>
                     </li>
                     <li class="header_subnav-item">
                       <a href="/pages/events.html" class="header__subnav-link">Sự kiện</a>
                     </li>
+                    <li class="header_subnav-item">
+                      <a href="/pages/research.html" class="header__subnav-link">
+                        Nghiên cứu
+                      </a>
+                    </li>
                   </ul>
                 </li>
                 <li class="header__nav-item">
-                  <a href="" class="header__nav-link">
+                  <a href="/pages/support.html" class="header__nav-link">
                     Hỗ trợ 
                     <i class="ti-headphone-alt"></i>
                     <i class="ti-angle-double-down"></i>
@@ -90,55 +102,125 @@
             </div>
         </div>
       </div>
+      <div class="mobile__overlay"></div>
+      <div class="mobile">
+            <div class="mobile__menu">
+              <ul class="header__nav-list">
+                <li class="header__nav-item">
+                  <a href="/index.html" class="header__nav-link">
+                    Trang chủ
+                    
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/products.html" class="header__nav-link">
+                    Sản phẩm/Dịch vụ
+                   
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/news.html" class="header__nav-link">  
+                    Tin tức
+                   
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/introduce.html" class="header__nav-link">
+                    Giới thiệu
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/research.html" class="header__nav-link">
+                    Nghiên cứu
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/events.html" class="header__nav-link">
+                    Sự kiện
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/contact.html" class="header__nav-link">
+                    Liên hệ
+              
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/fag.html" class="header__nav-link">
+                    FAQ
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/recruitment.html" class="header__nav-link">Tuyển dụng</a>
+                </li>
+              </ul>
+            </div>
+      </div>
+      
+      
       <div class="faq__content">
         <h2 class="faq__title">Câu hỏi thường gặp (FAQ)</h2>
         <div class="faq__list">
           <div class="faq__item" onclick="toggleAnswer('answer1')">
             <h3 class="faq__question">1. Trạm Refill là gì?</h3>
             <div id="answer1" class="faq__answer">
-              <p>Trạm Refill là mô hình cho phép bạn mang chai/lọ cá nhân đến để đổ đầy lại các sản phẩm như dầu gội, sữa tắm, nước rửa chén... nhằm giảm thiểu rác thải nhựa.</p>
+              <p>
+                <i class="ti-angle-right"></i>
+                Trạm Refill là mô hình cho phép bạn mang chai/lọ cá nhân đến để đổ đầy lại các sản phẩm như dầu gội, sữa tắm, nước rửa chén... nhằm giảm thiểu rác thải nhựa.</p>
             </div>
           </div>
       
           <div class="faq__item" onclick="toggleAnswer('answer2')">
             <h3 class="faq__question">2. Vì sao nên sử dụng dịch vụ Refill?</h3>
             <div id="answer2" class="faq__answer">
-              <p>Giảm rác thải nhựa, tiết kiệm chi phí và góp phần bảo vệ môi trường.</p>
+              <p>
+                <i class="ti-angle-right"></i>
+                Giảm rác thải nhựa, tiết kiệm chi phí và góp phần bảo vệ môi trường.</p>
             </div>
           </div>
       
           <div class="faq__item" onclick="toggleAnswer('answer3')">
             <h3 class="faq__question">3. Tôi có thể mang loại chai nào đến refill?</h3>
             <div id="answer3" class="faq__answer">
-              <p>Bạn có thể mang bất kỳ chai/lọ sạch có nắp đậy kín, tốt nhất nên là chai nhựa PET hoặc thủy tinh đã được vệ sinh.</p>
+              <p>
+                <i class="ti-angle-right"></i>
+                Bạn có thể mang bất kỳ chai/lọ sạch có nắp đậy kín, tốt nhất nên là chai nhựa PET hoặc thủy tinh đã được vệ sinh.</p>
             </div>
           </div>
       
           <div class="faq__item" onclick="toggleAnswer('answer4')">
             <h3 class="faq__question">4. Các sản phẩm tại trạm có an toàn không?</h3>
             <div id="answer4" class="faq__answer">
-              <p>Có. Các sản phẩm đều có nguồn gốc thiên nhiên, không chứa hóa chất độc hại và đã qua kiểm định.</p>
+              <p>
+                <i class="ti-angle-right"></i>
+                Có. Các sản phẩm đều có nguồn gốc thiên nhiên, không chứa hóa chất độc hại và đã qua kiểm định.</p>
             </div>
           </div>
       
           <div class="faq__item" onclick="toggleAnswer('answer5')">
             <h3 class="faq__question">5. Giá sản phẩm refill có rẻ hơn mua chai mới không?</h3>
             <div id="answer5" class="faq__answer">
-              <p>Có! Do bạn không phải trả thêm chi phí cho bao bì, nên sản phẩm refill thường rẻ hơn từ 10–30% so với mua mới.</p>
+              <p>
+                <i class="ti-angle-right"></i>
+                Có! Do bạn không phải trả thêm chi phí cho bao bì, nên sản phẩm refill thường rẻ hơn từ 10–30% so với mua mới.</p>
             </div>
           </div>
       
           <div class="faq__item" onclick="toggleAnswer('answer6')">
             <h3 class="faq__question">6. Làm thế nào để biết lịch hoạt động của trạm?</h3>
             <div id="answer6" class="faq__answer">
-              <p>Bạn có thể theo dõi lịch hoạt động tại fanpage chính thức hoặc mục “Tin tức” trên website.</p>
+              <p>
+                <i class="ti-angle-right"></i>
+                Bạn có thể theo dõi lịch hoạt động tại fanpage chính thức hoặc mục “Tin tức” trên website.</p>
             </div>
           </div>
       
           <div class="faq__item" onclick="toggleAnswer('answer7')">
             <h3 class="faq__question">7. Trạm Refill có mặt ở đâu?</h3>
             <div id="answer7" class="faq__answer">
-              <p>Hiện tại chúng tôi đặt tại NEU và đang mở rộng đến các trường đại học, cộng đồng xanh và khu dân cư.</p>
+              <p>
+                <i class="ti-angle-right"></i>
+                Hiện tại chúng tôi đặt tại NEU và đang mở rộng đến các trường đại học, cộng đồng xanh và khu dân cư.</p>
             </div>
           </div>
         </div>
@@ -222,6 +304,7 @@
         }
       }
     </script>
+    <script src="/js/script.js"></script>
   </body>
   <script>
     function updateCartCount() {

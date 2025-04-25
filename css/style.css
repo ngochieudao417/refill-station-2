@@ -14,6 +14,7 @@ body {
 :root {
   --highlight-text: #1b2a57;
   --gray-color: #f3f3f3;
+  --darker-gray: #555;
   --white-color: #fff;
   --black-color: #000;
   --primary-color: #37c363; /*màu chủ đạo, dùng cho nav bar, nút chính, title */

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/image/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="/css/reset.css" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet"> -->
+
+    <title>Nghiên cứu</title>
+    <style>
+        #researchpage {
+            display: grid;
+            grid-template-areas:
+                "header header header header"
+                ". title title ."
+                ". content content ."
+                ". form form ."
+                "footer footer footer footer";
+            grid-template-columns: 1fr 2fr 2fr 1fr;
+            gap: 1rem;
+            padding: 1rem 0;
+            margin: 0;    
+            background-color: var(--white-color);
+            line-height: 1.4;
+            font-size: 1.4rem;
+        }
+
+        .header { grid-area: header; }
+        .title { grid-area: title; margin-top: 8rem; }
+        .content { grid-area: content; align-self: start; }
+        .form { grid-area: form; align-self: start; }
+        .footer { grid-area: footer; }
+
+        #researchpage h2{
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        #researchpage h3{
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            text-align: start;
+        }
+
+        #researchpage p, li {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            list-style: disc;
+            list-style-position: inside;
+        }
+        .content{
+            padding-top: 0.5rem;
+        }
+
+        
+
+        fieldset {
+            border: 1px solid var(--brd-color);
+            padding: 1rem;
+            margin-top: 1rem;
+            background-color: var(--white-color);
+            border-radius: 10px;
+        }
+
+        legend {
+            font-weight: 600;
+            color: var(--accent-color);
+            padding: 0 0.5rem;
+        }
+        .opinion p{
+            text-align: center;
+        }
+        .reason p {
+            padding-left: 1.5rem;
+            text-indent: 0;
+        }
+
+        .survey__grid {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .survey__grid .left,
+        .survey__grid .right {
+            flex: 1 1 45%;
+            min-width: 250px;
+        }
+
+        .survey__label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .survey__input--select, .survey__input--text {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.3rem;
+            border: 1px solid var(--brd-color);
+            border-radius: 5px;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .survey__table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .survey__table th, .survey__table td {
+            border: 1px solid var(--brd-color);
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        .survey__table td:first-child {
+            text-align: left;
+        }
+
+        .survey__submit {
+            display: inline-block;
+            margin-top: 1rem;
+            background-color: var(--accent-color);
+            color:  var(--white-color);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        #researchpage .header_subnav-item{
+          list-style: none !important;
+        }
+
+        .survey__submit:hover {
+            background-color: var(--secondary-color);
+        }
+        @media (min-width: 481px) and (max-width: 768px) {
+            #researchpage {
+                grid-template-areas:
+                    "header header"
+                    "title title"
+                    "content content"
+                    "form form"
+                    "footer footer";
+                grid-template-columns: 1fr 1fr;
+                padding: 1.5rem;
+                gap: 1.5rem;
+            }
+            .survey__grid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .survey__table table {
+                font-size: 1rem;
+            }
+
+            .survey__submit {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            #researchpage {
+            grid-template-areas:
+                            "header"
+                            "title"
+                            "content"
+                            "form"
+                            "footer";
+                        grid-template-columns: 1fr;
+                        padding: 1rem;
+                        gap: 1rem;
+            }
+            .survey__grid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .survey__table table {
+                font-size: 0.8rem;
+            }
+
+            .survey__table th,
+            .survey__table td {
+                padding: 0.8rem;
+            }
+
+            .survey__submit {
+                width: 100%;
+                padding: 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="researchpage">
+        <div class="header">
+            <div class="header__top">
+              <!-- menu cho tablet, moble -->
+              <div class="header__hamburger" id="hamburger-icon">
+                <i class="ti-menu"></i>
+              </div>
+              <!-- menu cho tablet, moble -->
+    
+                <div class="header__logo">
+                  <img src="/image/logo/NEU_logo.svg" alt="" class="header__brand-logo">
+                  <img src="/image/logo/gnc_logo.svg" alt="" class="header__brand-logo">
+                  <img src="/image/logo/fuwa3e-logo.svg" style="width: 9.5rem;" alt="" class="header__brand-logo">
+                </div>
+                <div class="header__navigation">
+                  <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                      <a href="/index.html" class="header__nav-link">
+                        Trang chủ
+                        <i class="ti-home"></i>
+                      </a>
+                    </li>
+                    <li class="header__nav-item">
+                      <a href="/pages/products.html" class="header__nav-link">
+                        Sản phẩm/Dịch vụ
+                        <i class="ti-shopping-cart-full"></i>
+                      </a>
+                    </li>
+                    <li class="header__nav-item">
+                      <a href="#" class="header__nav-link">  
+                        Tin tức
+                        <i class="ti-bell"></i>
+                        <i class="ti-angle-double-down"></i>
+                      </a>
+                      <ul class="header__subnav">
+                        <li class="header_subnav-item">
+                          <a href="/pages/introduce.html" class="header__subnav-link">
+                            Giới thiệu
+                          </a>
+                        </li>
+                        <li class="header_subnav-item">
+                          <a href="/pages/news.html" class="header__subnav-link">
+                            Tin tức
+                          </a>
+                        </li>
+                        <li class="header_subnav-item">
+                          <a href="/pages/events.html" class="header__subnav-link">Sự kiện</a>
+                        </li>
+                        <li class="header_subnav-item">
+                          <a href="/pages/research.html" class="header__subnav-link">
+                            Nghiên cứu
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="header__nav-item">
+                      <a href="/pages/support.html" class="header__nav-link">
+                        Hỗ trợ 
+                        <i class="ti-headphone-alt"></i>
+                        <i class="ti-angle-double-down"></i>
+                      </a>
+                      <ul class="header__subnav">
+                        <li class="header_subnav-item">
+                          <a href="/pages/contact.html" class="header__subnav-link">Liên hệ</a>
+                        </li>
+                        <li class="header_subnav-item">
+                          <a href="/pages/fag.html" class="header__subnav-link">FAQ</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="header__nav-item">
+                      <a href="/pages/recruitment.html" class="header__nav-link">Tuyển dụng</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header__action-item">
+                  <a title="Đăng nhập" href="/pages/login.html" class="header__action-button">
+                    <i class="ti-user"></i>
+                  </a>
+                  <a title="Giỏ hàng" href="/pages/cart.html" class="header__action-button">               
+                      <i class="ti-shopping-cart"></i>
+                      <span class="cart-count">0</span>
+                  </a>
+                </div>
+            </div>
+          </div>
+          <div class="mobile__overlay"></div>
+          <div class="mobile">
+                <div class="mobile__menu">
+                  <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                      <a href="/index.html" class="header__nav-link">
+                        Trang chủ
+                        
+                      </a>
+                    </li>
+                    <li class="header__nav-item">
+                      <a href="/pages/products.html" class="header__nav-link">
+                        Sản phẩm/Dịch vụ
+                       
+                      </a>
+                    </li>
+                    <li class="header__nav-item">
+                      <a href="/pages/news.html" class="header__nav-link">  
+                        Tin tức
+                       
+                      </a>
+                    </li>
+                    <li class="header__nav-item">
+                      <a href="/pages/introduce.html" class="header__nav-link">
+                        Giới thiệu
+                      </a>
+                    </li>
+                    <li class="header__nav-item">
+                      <a href="/pages/research.html" class="header__nav-link">
+                        Nghiên cứu
+                      </a>
+                    </li>
+                    <li class="header__nav-item">
+                      <a href="/pages/events.html" class="header__nav-link">
+                        Sự kiện
+                      </a>
+                    </li>
+                    <li class="header__nav-item">
+                      <a href="/pages/contact.html" class="header__nav-link">
+                        Liên hệ
+                  
+                      </a>
+                    </li>
+                    <li class="header__nav-item">
+                      <a href="/pages/fag.html" class="header__nav-link">
+                        FAQ
+                      </a>
+                    </li>
+                    <li class="header__nav-item">
+                      <a href="/pages/recruitment.html" class="header__nav-link">Tuyển dụng</a>
+                    </li>
+                  </ul>
+                </div>
+          </div>
+        <div class="title">
+            <h2>Nghiên cứu về quan điểm và hành vi bảo vệ môi trường và sử dụng sản phẩm tái chế, sản phẩm từ thiên nhiên: Trường hợp người có thu nhập thấp và trung bình</h2>
+        </div>
+        <div class="content">
+            <div class="reason">
+                <h3>Lý do lựa chọn đề tài</h3>
+                <p>Trong bối cảnh biến đổi khí hậu và ô nhiễm môi trường ngày càng gia tăng, việc thay đổi hành vi tiêu dùng theo hướng thân thiện với môi trường là vấn đề cấp thiết. Tuy nhiên, phần lớn các nghiên cứu hiện nay tập trung vào nhóm người có thu nhập cao hoặc tầng lớp trung lưu thành thị – những người có điều kiện tiếp cận và chi trả cho các sản phẩm sinh thái. Trong khi đó, nhóm người có thu nhập thấp và trung bình – chiếm tỷ trọng lớn trong xã hội – lại ít được nghiên cứu sâu về quan điểm và hành vi tiêu dùng xanh. Việc tìm hiểu cách nhóm đối tượng này nhìn nhận và thực hành các hành vi bảo vệ môi trường sẽ cung cấp dữ liệu thực tiễn quan trọng cho việc xây dựng chính sách và chiến dịch truyền thông hiệu quả.</p>
+            </div>
+            <div class="target">
+                <h3>Mục tiêu đề tài</h3>
+                <ul>
+                    <li>Làm rõ nhận thức, thái độ và hành vi của người có thu nhập thấp và trung bình đối với vấn đề bảo vệ môi trường.</li>
+                    <li>Khám phá mức độ sử dụng sản phẩm tái chế và sản phẩm từ thiên nhiên trong nhóm đối tượng này.</li>
+                    <li>Xác định các yếu tố ảnh hưởng đến hành vi tiêu dùng xanh của họ.</li>
+                    <li>Đề xuất khuyến nghị nhằm thúc đẩy thói quen tiêu dùng bền vững trong nhóm người thu nhập thấp và trung bình.</li>
+                </ul>
+            </div>
+            <div class="infomation">
+                <h3>Nội dung nghiên cứu</h3>
+                <ul>
+                    <li>Đề xuất khuyến nghị nhằm thúc đẩy thói quen tiêu dùng bền vững trong nhóm người thu nhập thấp và trung bình.</li>
+                    <li>Phân tích đặc điểm kinh tế - xã hội của nhóm người thu nhập thấp và trung bình.</li>
+                    <li>Khảo sát nhận thức và hành vi thực tế về bảo vệ môi trường và sử dụng sản phẩm tái chế/sinh học.</li>
+                    <li>Phân tích các yếu tố tác động đến hành vi (thu nhập, giáo dục, thói quen, truyền thông, niềm tin…).</li>
+                    <li>So sánh giữa các nhóm độ tuổi, giới tính, khu vực (nông thôn/thành thị)…</li>
+                    <li>Đề xuất giải pháp chính sách và truyền thông hướng đến nhóm đối tượng này.</li>
+                </ul>
+            </div>
+            <div class="scope">
+                <h3>Phạm vi nghiên cứu</h3>
+                <ul>
+                    <li><b>Đối tượng nghiên cứu:</b> Người tiêu dùng có mức thu nhập thấp và trung bình.</li>
+                    <li><b>Địa bàn nghiên cứu:</b> thành phố Hà Nội, thành phố Đà Nẵng, thành phố Hồ Chí Minh</li>
+                    <li><b>Thời gian nghiên cứu:</b> Từ ngày 01/03/2025 đến 30/04/2025.</li>
+                </ul>
+            </div>
+            <div class="method">
+                <h3>Phương pháp nghiên cứu</h3>
+                <ul>
+                    <li><b>Phương pháp định tính:</b> Phỏng vấn sâu và thảo luận nhóm để khai thác quan điểm, niềm tin và rào cản hành vi.</li>
+                    <li><b>Phương pháp định lượng:</b> Khảo sát bảng hỏi với mẫu nghiên cứu từ 1000 đến 1500 người để thu thập dữ liệu thực nghiệm.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="form">
+            <h2>Form khảo sát</h2>
+            <form id="survey-form" action="" onsubmit="handleSubmit(event)">
+                <p>Mỗi phiếu khảo sát bạn điền sẽ giúp chúng tôi có những định hướng hoạt động tốt hơn trong tương lai. Chúng tôi xin cam kết toàn bộ dữ liệu khảo sát được thu thập hoàn toàn ẩn danh và chỉ phục vụ mục đích nghiên cứu học thuật. Sau khi hoàn thành khảo sát, bạn sẽ nhận được voucher giảm giá 10% cho lần refill đầu tiên như một lời cảm ơn chân thành từ chúng tôi. <br>Xin chân thành cảm ơn !</p>
+                <fieldset>
+                <legend>Thông tin cá nhân</legend>
+                <div class="survey__grid">
+                    <div class="left">
+                        <label class="survey__label">Giới tính:</label>
+                        <select name="gender" class="survey__input--select">
+                            <option>Nam</option>
+                            <option>Nữ</option>
+                            <option>Khác</option>
+                        </select>
+                        <label class="survey__label">Nhóm thu nhập hàng tháng:</label>
+                        <select name="income" class="survey__input--select">
+                            <option>Dưới 1 triệu</option>
+                            <option>1 - 3 triệu</option>
+                            <option>3 - 5 triệu</option>
+                            <option>Trên 5 triệu</option>
+                        </select>
+                    </div>
+                    <div class="right">
+                        <label class="survey__label">Nghề nghiệp:</label>
+                        <input type="text" name="occupation" class="survey__input--text" />
+
+                        <label class="survey__label">Độ tuổi:</label>
+                        <select name="age" class="survey__input--select">
+                            <option>Dưới 18</option>
+                            <option>18 - 25</option>
+                            <option>26 - 35</option>
+                            <option>36 - 45</option>
+                            <option>Trên 45</option>
+                    </select>
+                    </div>
+                </div>
+                </fieldset>
+                <fieldset class="opinion">
+                    <legend>Ý kiến cá nhân</legend>
+                    <p>1: Hoàn toàn không đồng ý | 2: Không đồng ý | 3: Trung lập | 4: Đồng ý | 5: Hoàn toàn đồng ý</p>
+                    <table class="survey__table">
+                        <tr>
+                          <th>Phát biểu</th>
+                          <th>1</th>
+                          <th>2</th>
+                          <th>3</th>
+                          <th>4</th>
+                          <th>5</th>
+                        </tr>
+                        <tr>
+                          <td>Tôi thường quan tâm đến các vấn đề môi trường.</td>
+                          <td><input type="radio" name="q1" value="1"></td>
+                          <td><input type="radio" name="q1" value="2"></td>
+                          <td><input type="radio" name="q1" value="3"></td>
+                          <td><input type="radio" name="q1" value="4"></td>
+                          <td><input type="radio" name="q1" value="5"></td>
+                        </tr>
+                        <tr>
+                          <td>Tôi sẵn sàng sử dụng sản phẩm tái chế nếu chất lượng tương đương.</td>
+                          <td><input type="radio" name="q2" value="1"></td>
+                          <td><input type="radio" name="q2" value="2"></td>
+                          <td><input type="radio" name="q2" value="3"></td>
+                          <td><input type="radio" name="q2" value="4"></td>
+                          <td><input type="radio" name="q2" value="5"></td>
+                        </tr>
+                        <tr>
+                          <td>Tôi tin rằng sản phẩm thiên nhiên tốt cho sức khỏe hơn.</td>
+                          <td><input type="radio" name="q3" value="1"></td>
+                          <td><input type="radio" name="q3" value="2"></td>
+                          <td><input type="radio" name="q3" value="3"></td>
+                          <td><input type="radio" name="q3" value="4"></td>
+                          <td><input type="radio" name="q3" value="5"></td>
+                        </tr>
+                        <tr>
+                          <td>Tôi ưu tiên mua sản phẩm có bao bì thân thiện với môi trường.</td>
+                          <td><input type="radio" name="q4" value="1"></td>
+                          <td><input type="radio" name="q4" value="2"></td>
+                          <td><input type="radio" name="q4" value="3"></td>
+                          <td><input type="radio" name="q4" value="4"></td>
+                          <td><input type="radio" name="q4" value="5"></td>
+                        </tr>
+                        <tr>
+                          <td>Tôi sẵn sàng mang chai/lọ cũ đến refill nếu giá bằng hoặc rẻ hơn sản phẩm đóng chai sẵn.</td>
+                          <td><input type="radio" name="q5" value="1"></td>
+                          <td><input type="radio" name="q5" value="2"></td>
+                          <td><input type="radio" name="q5" value="3"></td>
+                          <td><input type="radio" name="q5" value="4"></td>
+                          <td><input type="radio" name="q5" value="5"></td>
+                        </tr>
+                        <tr>
+                          <td>Tôi cảm thấy refill (tái nạp) là một hình thức tiêu dùng bất tiện.</td>
+                          <td><input type="radio" name="q6" value="1"></td>
+                          <td><input type="radio" name="q6" value="2"></td>
+                          <td><input type="radio" name="q6" value="3"></td>
+                          <td><input type="radio" name="q6" value="4"></td>
+                          <td><input type="radio" name="q6" value="5"></td>
+                        </tr>
+                
+                        <tr>
+                          <td>Tôi sẽ chọn sản phẩm đóng chai sẵn vì tiện lợi hơn, dù giá tương đương với refill.</td>
+                          <td><input type="radio" name="q7" value="1"></td>
+                          <td><input type="radio" name="q7" value="2"></td>
+                          <td><input type="radio" name="q7" value="3"></td>
+                          <td><input type="radio" name="q7" value="4"></td>
+                          <td><input type="radio" name="q7" value="5"></td>
+                        </tr>
+                        <tr>
+                          <td>Tôi sẵn sàng thay đổi thói quen tiêu dùng nếu điều đó giúp bảo vệ môi trường.</td>
+                          <td><input type="radio" name="q8" value="1"></td>
+                          <td><input type="radio" name="q8" value="2"></td>
+                          <td><input type="radio" name="q8" value="3"></td>
+                          <td><input type="radio" name="q8" value="4"></td>
+                          <td><input type="radio" name="q8" value="5"></td>
+                        </tr>
+                        <tr>
+                          <td>Tôi sẵn sàng tham gia các chương trình ưu đãi (ví dụ: giảm giá, tích điểm) nếu mang chai đến refill.</td>
+                          <td><input type="radio" name="q9" value="1"></td>
+                          <td><input type="radio" name="q9" value="2"></td>
+                          <td><input type="radio" name="q9" value="3"></td>
+                          <td><input type="radio" name="q9" value="4"></td>
+                          <td><input type="radio" name="q9" value="5"></td>
+                        </tr>
+                        <tr>
+                          <td>Tôi nghĩ rằng việc refill sản phẩm sẽ ngày càng phổ biến trong tương lai.</td>
+                          <td><input type="radio" name="q10" value="1"></td>
+                          <td><input type="radio" name="q10" value="2"></td>
+                          <td><input type="radio" name="q10" value="3"></td>
+                          <td><input type="radio" name="q10" value="4"></td>
+                          <td><input type="radio" name="q10" value="5"></td>
+                        </tr>
+                        
+                      </table>
+                </fieldset>
+                <button type="submit" class="survey__submit">Gửi khảo sát</button>
+            </form>
+        </div>
+        <footer class="footer">
+            <div class="footer__container">
+              <div class="footer__column footer__column--info">
+                <h4 class="footer__title">VĂN PHÒNG FUWA</h4>
+                <ul class="footer__list">
+                  <li class="footer__item"><strong>Nhà máy:</strong> 04 Đồng Cổ, Phường Hàm Rồng, TP Thanh Hóa, Tỉnh Thanh Hóa</li>
+                  <li class="footer__item"><strong>TP.HCM:</strong> 09 Đỗ Thừa Tự, Phường Tân Quý, Quận Tân Phú, TP. Hồ Chí Minh</li>
+                  <li class="footer__item"><strong>Hà Nội:</strong> Số 2 Ngách 23 Ngõ 62 Nguyễn Chí Thanh, Quận Đống Đa, TP. Hà Nội</li>
+                  <li class="footer__item"><strong>Đà Nẵng:</strong> 114 Đường Văn An, Phường Mân Thái, Quận Sơn Trà, TP. Đà Nẵng</li>
+                  <li class="footer__item"><strong>VP Đức:</strong> Ziehtlenbühndweg 22a, 77704 Oberkirch, Baden-Württemberg, Deutschland</li>
+                </ul>
+              </div>
+          
+              <div class="footer__column footer__column--policy">
+                <h4 class="footer__title">CHÍNH SÁCH FUWA</h4>
+                <ul class="footer__list">
+                  <li class="footer__item">Chính sách bán hàng</li>
+                  <li class="footer__item">Điều khoản sử dụng</li>
+                  <li class="footer__item">Điểm bán hàng</li>
+                </ul>
+              </div>
+          
+              <div class="footer__column footer__column--contact">
+                <h4 class="footer__title">THÔNG TIN LIÊN HỆ</h4>
+                <p class="footer__item"><i class="ti-headphone-alt"></i> Kinh Doanh: 0972.377.898 (Hotline)</p>
+              </div>
+          
+              <div class="footer__column footer__column--links">
+                <h4 class="footer__title">WEBSITE LIÊN KẾT</h4>
+                <div class="footer__logos">
+                  <a href="#" class="footer__logo-link">
+                    <img src="/image/homepage/footer-ecoenzyme.jpg" alt="EcoEnzyme" class="footer__logo">
+                  </a>
+                  <a href="#" class="footer__logo-link">
+                    <img src="/image/homepage/footer-sweet-boss.jpg" alt="SweetieBoss" class="footer__logo">
+                  </a>
+                  <a href="#" class="footer__logo-link">
+                    <img src="/image/homepage/footer-refill3er.jpg" alt="Refill Station" class="footer__logo">
+                  </a>
+                </div>
+              </div>
+              
+          
+              <div class="footer__column footer__column--social">
+                <h4 class="footer__title">KẾT NỐI VỚI FUWA</h4>
+                <div class="footer__social-icons">
+                  <a href="#" class="footer__icon"><i class="ti-facebook"></i></a>
+                  <a href="#" class="footer__icon"><i class="ti-world"></i></a>
+                  <a href="#" class="footer__icon"><i class="ti-instagram"></i></a>
+                  <a href="#" class="footer__icon"><i class="ti-music-alt"></i></a>
+                  <a href="#" class="footer__icon"><i class="ti-youtube"></i></a>
+                  <a href="#" class="footer__icon"><i class="ti-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </footer>
+    </div>
+    <script>
+        function handleSubmit(event) {
+        event.preventDefault(); 
+
+        const form = document.getElementById("survey-form");
+
+        const gender = form.querySelector('select[name="gender"]').value;
+        const income = form.querySelector('select[name="income"]').value;
+        const occupation = form.querySelector('input[name="occupation"]').value.trim();
+        const age = form.querySelector('select[name="age"]').value;
+
+        // Kiểm tra tất cả các câu hỏi radio
+        const q1 = form.querySelector('input[name="q1"]:checked');
+        const q2 = form.querySelector('input[name="q2"]:checked');
+        const q3 = form.querySelector('input[name="q3"]:checked');
+        const q4 = form.querySelector('input[name="q4"]:checked');
+        const q5 = form.querySelector('input[name="q5"]:checked');
+        const q6 = form.querySelector('input[name="q6"]:checked');
+        const q7 = form.querySelector('input[name="q7"]:checked');
+        const q8 = form.querySelector('input[name="q8"]:checked');
+        const q9 = form.querySelector('input[name="q9"]:checked');
+        const q10 = form.querySelector('input[name="q10"]:checked');
+
+        // Kiểm tra nếu thiếu thông tin
+        if (!gender || !income || !occupation || !age || !q1 || !q2 || !q3 || !q4 || !q5 || !q6 || !q7 || !q8 || !q9 || !q10) {
+            alert("Vui lòng điền đầy đủ tất cả các thông tin trước khi gửi khảo sát.");
+            return false; 
+        }
+
+        alert("Gửi khảo sát thành công! Bạn sẽ nhận được voucher giảm giá 10% cho lần refill đầu tiên.");
+
+        // Reset form
+        form.reset();
+        return false; 
+    }
+    </script>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

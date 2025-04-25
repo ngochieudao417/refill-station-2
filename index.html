@@ -18,9 +18,12 @@
     <div id="homepage">
       <div class="header">
         <div class="header__top">
+          <!-- menu cho tablet, moble -->
           <div class="header__hamburger" id="hamburger-icon">
-            <i class="ti-menu"></i> <!-- Hamburger icon from Themify -->
+            <i class="ti-menu"></i>
           </div>
+          <!-- menu cho tablet, moble -->
+
             <div class="header__logo">
               <img src="/image/logo/NEU_logo.svg" alt="" class="header__brand-logo">
               <img src="/image/logo/gnc_logo.svg" alt="" class="header__brand-logo">
@@ -41,19 +44,29 @@
                   </a>
                 </li>
                 <li class="header__nav-item">
-                  <a href="/pages/news.html" class="header__nav-link">  
+                  <a href="#" class="header__nav-link">  
                     Tin tức
                     <i class="ti-bell"></i>
                     <i class="ti-angle-double-down"></i>
                   </a>
                   <ul class="header__subnav">
                     <li class="header_subnav-item">
-                      <a href="/pages/info.html" class="header__subnav-link">
-                        Thông tin
+                      <a href="/pages/introduce.html" class="header__subnav-link">
+                        Giới thiệu
+                      </a>
+                    </li>
+                    <li class="header_subnav-item">
+                      <a href="/pages/news.html" class="header__subnav-link">
+                        Tin tức
                       </a>
                     </li>
                     <li class="header_subnav-item">
                       <a href="/pages/events.html" class="header__subnav-link">Sự kiện</a>
+                    </li>
+                    <li class="header_subnav-item">
+                      <a href="/pages/research.html" class="header__subnav-link">
+                        Nghiên cứu
+                      </a>
                     </li>
                   </ul>
                 </li>
@@ -87,6 +100,60 @@
               </a>
             </div>
         </div>
+      </div>
+      <div class="mobile__overlay"></div>
+      <div class="mobile">
+            <div class="mobile__menu">
+              <ul class="header__nav-list">
+                <li class="header__nav-item">
+                  <a href="/index.html" class="header__nav-link">
+                    Trang chủ
+                    
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/products.html" class="header__nav-link">
+                    Sản phẩm/Dịch vụ
+                   
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/news.html" class="header__nav-link">  
+                    Tin tức
+                   
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/introduce.html" class="header__nav-link">
+                    Giới thiệu
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/research.html" class="header__nav-link">
+                    Nghiên cứu
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/events.html" class="header__nav-link">
+                    Sự kiện
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/contact.html" class="header__nav-link">
+                    Liên hệ
+              
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/fag.html" class="header__nav-link">
+                    FAQ
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/recruitment.html" class="header__nav-link">Tuyển dụng</a>
+                </li>
+              </ul>
+            </div>
       </div>
       <div class="about">
         <div class="about__slider">
@@ -138,7 +205,9 @@
               tự nhiên, an toàn cho sức khỏe, nhằm kiến tạo lối sống xanh, một hành tinh khỏe mạnh.</b>
               <br>
                 <span style="display: block; text-align: center; font-weight: bolder;">FUWA - KIẾN TẠO THẾ GIỚI XANH</span>
-                <a href="https://www.amazon.com/stores/page/6B2DC053-A645-4E26-92FA-C1ADAF9E88BC?ingress=3" class="content__amazon-link">Truy cập Fuwa3e trên Amazon.com</a>
+                <a href="https://www.amazon.com/stores/page/6B2DC053-A645-4E26-92FA-C1ADAF9E88BC?ingress=3" class="content__amazon-link">Truy cập Fuwa3e trên Amazon</a>
+                <a href="https://fuwa.com.vn/" class="content__amazon-link">Truy cập Fuwa3e trên trang chủ của fuwa3e</a>
+                <a href="https://shopee.vn/fuwa3e.official?entryPoint=ShopBySearch&searchKeyword=fuwa3e" class="content__amazon-link">Truy cập Fuwa3e trên Shopee</a>
             </p>
           </div>
           <div class="content__fuwa3e">
@@ -151,9 +220,9 @@
                 Đây là 3 yếu tố được chúng tôi ủng hộ và cố gắng bảo vệ mỗi ngày bằng các sản phẩm của mình.</p>
                 <img src="./image/homepage/fuwa3e_info_img.png" alt="" class="content__fuwa3e-img">
             </div>
-            <div class="content__fuwa3e-video">
-              <iframe width="600" height="400" src="https://www.youtube.com/embed/tXgSE9a2a6Q" title="Vỏ Dứa Có Thể Thay Thế Xà Phòng Không- TM  #fuwa3e #enzyme #nature #enzymecleaners #fuwabiotech" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+   
+              <iframe class="content__fuwa3e-video" width="600" height="400" src="https://www.youtube.com/embed/tXgSE9a2a6Q" title="Vỏ Dứa Có Thể Thay Thế Xà Phòng Không- TM  #fuwa3e #enzyme #nature #enzymecleaners #fuwabiotech" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
           </div>
         </div>
         <div class="content__fuwa3e-brand">
@@ -168,21 +237,21 @@
               </p>
               <div class="content__brand-list">
                 <div style="padding: 2rem 1rem;">
-                  <a href="" class="content__brand-item">
+                  <a href="/pages/products.html" class="content__brand-item">
                     <img src="/image/homepage/Homepage-Fuwa3e-Home-Care.jpg" alt="" class="content__brand-img">
                   </a>
                   <h4 class="content__brand-title center-title">Fuwa3e - Home Care</h4>
                   <p class="content__brand-for">Dành cho nhà cửa</p>
                 </div>
                 <div style="padding: 2rem 1rem;">
-                  <a href="" class="content__brand-item">
+                  <a href="/pages/products.html" class="content__brand-item">
                     <img src="/image/homepage/Homepage-Carfresh-Car-Care.jpg" alt="" class="content__brand-img">
                   </a>
                   <h4 class="content__brand-title center-title">Fuwa3e - Car Care</h4>
                   <p class="content__brand-for">Dành cho xe cộ</p>
                 </div>
                 <div style="padding: 2rem 1rem;">
-                  <a href="" class="content__brand-item">
+                  <a href="/pages/products.html" class="content__brand-item">
                     <img src="/image/homepage/Homepage-Fuwa3e-Baby-Care.jpg" alt="" class="content__brand-img">
                   </a>
                   <h4 class="content__brand-title center-title">Fuwa3e - Baby Care</h4>
@@ -198,8 +267,8 @@
             Bạn sẽ nhận được nhiều hỗ trợ khi khởi đầu
           </span>
           <form action="" class="content__business-form">
-            <input placeholder="Tên bạn" type="text" class="business__name input-box">
-            <input placeholder="Số điện thoại" type="tel" class="business__phone-number input-box">
+            <input placeholder="Tên bạn" type="text" class="business__name input-box" required>
+            <input placeholder="Số điện thoại" type="tel" class="business__phone-number input-box" required>
             <input type="submit" value="Xác nhận" class="content__form-submit">
           </form>
         </div>
@@ -263,26 +332,35 @@
       </footer>
       
     </div>
+    <script src="/js/script.js"></script>
   </body>
 </html>
 
 <script>
-  // JavaScript to toggle the navbar when clicking on the hamburger icon
-const hamburgerIcon = document.getElementById('hamburger-icon');
-const navbarMenu = document.getElementById('navbar-menu');
-
-hamburgerIcon.addEventListener('click', () => {
-  navbarMenu.style.display = (navbarMenu.style.display === 'none' || navbarMenu.style.display === '') ? 'flex' : 'none';
-});
 
   // js cho phần slider 
   const slider = document.querySelector('.about__slider');
   const slides = document.querySelectorAll('.about__slide-img');
   let currentIndex = 0;
   const totalSlides = slides.length;
+  let isMobileMode = false;
+  // check xem đang ở mode nào
+function checkMobileMode() {
+  if (window.innerWidth <= 1074) {
+    isMobileMode = true;
+  } else {
+    isMobileMode = false;
+  }
+}
+checkMobileMode();
+window.addEventListener('resize', checkMobileMode);
 
   function showSlide(index) {
-    slider.style.transform = `translateX(-${index * 25}%)`;
+    if(isMobileMode) {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    } else {
+      slider.style.transform = `translateX(-${index * 25}%)`;
+    }
   }
 
   function nextSlide() {

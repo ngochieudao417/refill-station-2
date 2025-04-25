@@ -19,10 +19,12 @@
     <div class="loginpage">
       <div class="header">
         <div class="header__top">
-            <div class="header__search">
-              <input type="text" class="header__search-box" placeholder="Tìm kiếm..." name="" id="">
-              <i class="header_search-icon ti-search"></i>
-            </div>
+          <!-- menu cho tablet, moble -->
+          <div class="header__hamburger" id="hamburger-icon">
+            <i class="ti-menu"></i>
+          </div>
+          <!-- menu cho tablet, moble -->
+      
             <div class="header__logo">
               <img src="/image/logo/NEU_logo.svg" alt="" class="header__brand-logo">
               <img src="/image/logo/gnc_logo.svg" alt="" class="header__brand-logo">
@@ -43,24 +45,34 @@
                   </a>
                 </li>
                 <li class="header__nav-item">
-                  <a href="/pages/news.html" class="header__nav-link">  
+                  <a href="#" class="header__nav-link">  
                     Tin tức
                     <i class="ti-bell"></i>
                     <i class="ti-angle-double-down"></i>
                   </a>
                   <ul class="header__subnav">
                     <li class="header_subnav-item">
-                      <a href="/pages/info.html" class="header__subnav-link">
-                        Thông tin
+                      <a href="/pages/introduce.html" class="header__subnav-link">
+                        Giới thiệu
+                      </a>
+                    </li>
+                    <li class="header_subnav-item">
+                      <a href="/pages/news.html" class="header__subnav-link">
+                        Tin tức
                       </a>
                     </li>
                     <li class="header_subnav-item">
                       <a href="/pages/events.html" class="header__subnav-link">Sự kiện</a>
                     </li>
+                    <li class="header_subnav-item">
+                      <a href="/pages/research.html" class="header__subnav-link">
+                        Nghiên cứu
+                      </a>
+                    </li>
                   </ul>
                 </li>
                 <li class="header__nav-item">
-                  <a href="" class="header__nav-link">
+                  <a href="/pages/support.html" class="header__nav-link">
                     Hỗ trợ 
                     <i class="ti-headphone-alt"></i>
                     <i class="ti-angle-double-down"></i>
@@ -90,53 +102,93 @@
             </div>
         </div>
       </div>
+      <div class="mobile__overlay"></div>
+      <div class="mobile">
+            <div class="mobile__menu">
+              <ul class="header__nav-list">
+                <li class="header__nav-item">
+                  <a href="/index.html" class="header__nav-link">
+                    Trang chủ
+                    
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/products.html" class="header__nav-link">
+                    Sản phẩm/Dịch vụ
+                   
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/news.html" class="header__nav-link">  
+                    Tin tức
+                   
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/introduce.html" class="header__nav-link">
+                    Giới thiệu
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/research.html" class="header__nav-link">
+                    Nghiên cứu
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/events.html" class="header__nav-link">
+                    Sự kiện
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/contact.html" class="header__nav-link">
+                    Liên hệ
+              
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/fag.html" class="header__nav-link">
+                    FAQ
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="/pages/recruitment.html" class="header__nav-link">Tuyển dụng</a>
+                </li>
+              </ul>
+            </div>
       </div>
-      <div class="auth__container">
-        <div class="auth" id="auth">
-          <div class="auth__overlay"></div>
-
-          <div class="auth__wrapper">
-            <!-- Form đăng nhập -->
-            <div class="auth__form auth__form--login">
-              <h2 class="auth__title">Đăng nhập</h2>
-              <input type="text" placeholder="Email" class="auth__input" />
-              <input
-                type="password"
-                placeholder="Mật khẩu"
-                class="auth__input"
-              />
-              <button
-                class="auth__button auth__button--login"
-                onclick="switchToRegister()"
-              >
-                <span>Đăng nhập</span>
-              </button>
-            </div>
-
-            <!-- Form đăng ký -->
-            <div class="auth__form auth__form--register">
-              <h2 class="auth__title">Đăng ký</h2>
-              <input type="text" placeholder="Tên" class="auth__input" />
-              <input type="email" placeholder="Email" class="auth__input" />
-              <input
-                type="password"
-                placeholder="Mật khẩu"
-                class="auth__input"
-              />
-              <button
-                class="auth__button auth__button--register"
-                onclick="switchToLogin()"
-              >
-                <span>Đăng ký</span>
-              </button>
-            </div>
-          </div>
+      
+      </div>
+      <div class="login">
+        <h2 class="login__heading">Đăng nhập</h2>
+        <form class="login__form">
+          <input required type="text" class="login__input" placeholder="Email hoặc SĐT" />
+          <input required type="password" class="login__input" placeholder="Mật khẩu" />
+          <button type="submit" class="login__btn login__btn--primary">Đăng nhập</button>
+          <p class="login__register-prompt">
+            Chưa có tài khoản? <span class="login__register-link">Đăng ký ngay!</span>
+          </p>
+        </form>
+      </div>
+    
+      <!-- modal khi đăng kí -->
+      <div class="modal" id="registerModal">
+        <div class="modal__content">
+          <span class="modal__close-btn" id="closeModal">&times;</span>
+          <h2 class="modal__title">Đăng ký tài khoản</h2>
+          <form class="modal__form">
+            <input required type="text" class="modal__input" placeholder="Tên đầy đủ" />
+            <input required type="email" class="modal__input" placeholder="Email" />
+            <input required type="password" class="modal__input" placeholder="Mật khẩu" />
+            <input required type="password" class="modal__input" placeholder="Xác nhận mật khẩu" />
+            <button type="submit" class="modal__btn modal__btn--primary">Đăng ký</button>
+          </form>
         </div>
       </div>
-      <div class="footer">
-        <h2 class="slogan">
-          Refill không chỉ là hành động, mà là phong cách sống!
-        </h2>
+    
+      <script src="scripts.js"></script>
+      
+   
+        </div>
       </div>
     </div>
     <footer class="footer">
@@ -196,36 +248,21 @@
       </div>
     </footer>
     <script>
-      const auth = document.getElementById("auth");
+      const modal = document.getElementById("registerModal");
+      const openBtn = document.querySelector(".login__register-link");
+      const closeBtn = document.getElementById("closeModal");
 
-      function switchToLogin() {
-        if (auth.classList.contains("auth--active")) {
-          auth.classList.remove("auth--active");
-        }
-      }
-
-      function switchToRegister() {
-        if (!auth.classList.contains("auth--active")) {
-          auth.classList.add("auth--active");
-        }
-      }
-      function updateCartCount() {
-          let cart = JSON.parse(localStorage.getItem('cart')) || [];
-          const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-  
-          let cartCount = document.querySelector('.cart-count');
-          if (!cartCount) {
-              cartCount = document.createElement('span');
-              cartCount.className = 'cart-count';
-              document.querySelector('.header__action-button[title="Giỏ hàng"]').appendChild(cartCount);
-          }
-          cartCount.textContent = totalItems;
-      }
-  
-      document.addEventListener('DOMContentLoaded', () => {
-          updateCartCount();
-          loadProduct();
+      openBtn.addEventListener("click", () => {
+      modal.style.display = "block";
+      const content = modal.querySelector(".modal__content");
+      // content.style.animation = "popIn 0.3s ease";
       });
+
+      closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+      });
+
     </script>
+    
   </body>
 </html>
