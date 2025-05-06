@@ -3,13 +3,12 @@ html {
 }
 
 body {
-  font-family: 'Quicksand', sans-serif !important;
-  font-size: 1.9rem; 
+  font-family: "Quicksand", sans-serif !important;
+  font-size: 1.9rem;
   color: var(--text-color);
   background-color: var(--bg-color);
   line-height: 1.6;
 }
-
 /* 3. CSS Variables: màu chủ đạo (eco-friendly vibes) */
 :root {
   --highlight-text: #1b2a57;
@@ -21,7 +20,7 @@ body {
   --secondary-color: #8fd9c4; /*dùng cho hover, section */
   --accent-color: #b8d9d0; /* dùng cho card, khung thông tin  */
   --text-color: #333333;
-  --secondary-text-color: #a8c66c; 
+  --secondary-text-color: #a8c66c;
   --brd-color: #b8d9d0; /* dùng cho border */
   --bg-color: #e8f1fd; /*dùng cho background */
   --bg-text-color: #f3f3f3;
